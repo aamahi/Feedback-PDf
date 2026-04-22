@@ -1,0 +1,3172 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bescheinigung über Zwischenverdienst</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .body-container {
+      padding: 0 35px;
+      margin: 0;
+
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    tr {
+      page-break-inside: avoid;
+      break-inside: avoid;
+
+    }
+
+    td {
+      vertical-align: bottom;
+      padding: 0;
+    }
+
+
+    .header-title-sm {
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .header-title-lg {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .date-label {
+      font-size: 10px;
+      margin-bottom: 2px;
+    }
+
+    .date-box {
+      width: 20px;
+      height: 35px;
+      color: #575964 !important;
+      background-color: #d9dde8;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 25px;
+      font-weight: normal;
+      padding: 0px 2px 2px 2px;
+    }
+
+    .zero-box {
+      color: #575964 !important;
+      background-color: #d9dde8;
+      height: 35px;
+      width: 35px;
+      font-size: 15px;
+      vertical-align: middle !important;
+      text-align: center;
+    }
+
+    .rectangle-box {
+      width: 25px;
+      height: 35px;
+      text-align: center;
+      color: gray;
+      vertical-align: middle;
+      font-size: 25px;
+      font-weight: normal;
+      padding: 0px 2px 2px 2px;
+    }
+
+    .rectangle-box-div {
+      background-color: #dbe4eb;
+      width: 25px;
+      padding-top: 2px;
+      box-sizing: border-box;
+      height: 25px;
+      text-align: center;
+      vertical-align: middle;
+      color: black;
+      border: 1.5px solid rgb(0, 0, 0);
+      ;
+    }
+
+    .custom-checkbox {
+      width: 25px;
+      height: 25px;
+      border: 2px solid #000;
+      background: #fff;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    /* checked state */
+    .custom-checkbox.checked::after {
+      content: "✔";
+      position: absolute;
+      top: 64%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+    }
+
+
+
+    .rectangle-box-div2 {
+      background-color: #dbe4eb;
+      width: 25px;
+      padding-top: 2px;
+      box-sizing: border-box;
+      height: 25px;
+      text-align: center;
+
+      margin-top: -48px;
+      margin-bottom: -48px;
+      vertical-align: middle;
+      color: black;
+      border: 1.5px solid rgb(0, 0, 0);
+    }
+
+    .date-spacer {
+      width: 10px;
+      text-align: center;
+      vertical-align: bottom;
+      font-weight: bold;
+      font-size: 20px;
+      padding-bottom: 5px;
+      background-color: transparent;
+    }
+
+    .date-subscript {
+      font-size: 9px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 2px;
+    }
+
+    .corner-tl {
+      position: absolute;
+      top: 0px;
+      left: 4px;
+      width: 25px;
+      height: 25px;
+      border-top: 1.5px solid #000;
+      border-left: 1.5px solid #000;
+    }
+
+    .corner-tr {
+      position: absolute;
+      top: 0px;
+      right: 4px;
+      width: 25px;
+      height: 25px;
+      border-top: 1.5px solid #000;
+      border-right: 1.5px solid #000;
+    }
+
+    .corner-bl {
+      position: absolute;
+      bottom: -210px;
+      left: 4px;
+      width: 25px;
+      height: 25px;
+      border-bottom: 1.5px solid #000;
+      border-left: 1.5px solid #000;
+    }
+
+    .corner-br {
+      position: absolute;
+      bottom: -210px;
+      right: 4px;
+      width: 25px;
+      height: 25px;
+      border-bottom: 1.5px solid #000;
+      border-right: 1.5px solid #000;
+    }
+
+    .font-size-25 {
+      font-size: 25px !important;
+    }
+
+    .box-content {
+      background-color: #d9dde8;
+      color: #575964 !important;
+      padding-top: 2px !important;
+      padding-left: 2px !important;
+      padding-bottom: 8px !important;
+    }
+
+    .before-ahv-number {
+      margin-right: 1px;
+      font-size: 25px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="body-container">
+
+    <table role="presentation">
+      <tr>
+        <!-- Left Side: Titles -->
+        <td style="width: 70%">
+          <div class="header-title-sm">Arbeitslosenversicherung</div>
+          <div class="header-title-lg">
+            Bescheinigung über Zwischenverdienst für den Monat
+          </div>
+        </td>
+
+        <!-- Right Side: Date Input -->
+        <td style="width: 30%; text-align: right">
+          <div style="display: inline-block; text-align: left">
+            <div class="date-label">Monat und Jahr</div>
+            <table role="presentation" style="width: auto">
+              <tr>
+
+                {% assign monthName = metaInfo[0].TargetMonth %}
+
+                {% case monthName %}
+                {% when "Januar" %}{% assign month = "01" %}
+                {% when "Februar" %}{% assign month = "02" %}
+                {% when "März" %}{% assign month = "03" %}
+                {% when "April" %}{% assign month = "04" %}
+                {% when "May" %}{% assign month = "05" %}
+                {% when "June" %}{% assign month = "06" %}
+                {% when "July" %}{% assign month = "07" %}
+                {% when "August" %}{% assign month = "08" %}
+                {% when "September" %}{% assign month = "09" %}
+                {% when "Oktober" %}{% assign month = "10" %}
+                {% when "November" %}{% assign month = "11" %}
+                {% when "December" %}{% assign month = "12" %}
+                {% endcase %}
+
+                {% for digit in month %}
+
+                <td class="date-box">{{digit}}</td>
+                <td style="width: 2px"></td>
+                {% endfor %}
+
+                <td class="date-spacer">.</td>
+                {% for year in metaInfo[0].TargetYear %}
+
+                <td class="date-box">{{year}}</td>
+                <td style="width: 2px"></td>
+                {% endfor %}
+
+              </tr>
+              <tr>
+                <td class="date-subscript">M</td>
+                <td></td>
+                <td class="date-subscript">M</td>
+                <td></td>
+                <td class="date-subscript"></td>
+                <td></td>
+                <td class="date-subscript">J</td>
+                <td></td>
+                <td class="date-subscript">J</td>
+                <td></td>
+                <td class="date-subscript">J</td>
+                <td></td>
+                <td class="date-subscript">J</td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+
+    <!-- Applicant Info Section -->
+    <table role="presentation" style="width: 100%; position: relative; margin-top: 20px">
+      <!-- Top Crop Marks -->
+      <div style="position: relative; margin-top: 20px">
+        <div class="corner-tl"></div>
+        <div class="corner-tr"></div>
+      </div>
+
+      <tr style="position: relative">
+        <td colspan="3" style="padding: 5px 10px">
+          <!-- Name Row -->
+          <div class="date-label">Name</div>
+          <div class="box-content" style="font-size: 25px; min-height: 20px">
+            {{metaInfo[0].FirstName}}
+          </div>
+
+          <div style="height: 10px"></div>
+
+          <!-- Vorname Row -->
+          <div class="date-label">Vorname</div>
+          <div class="box-content" style="font-size: 25px; min-height: 20px">
+            {{metaInfo[0].LastName}}
+          </div>
+
+          <div style="height: 15px"></div>
+
+          <!-- AHV & Birthdate Row -->
+          <table role="presentation">
+            <tr>
+              <!-- AHV Number -->
+              <td style="width: 400px; vertical-align: bottom">
+                <div class="date-label" style="margin-bottom: 5px">
+                  AHV-Nummer
+                </div>
+                <table role="presentation" style="width: auto; font-size: 25px">
+                  <tr style="font-size: 25px">
+                    <td style="
+                          font-size: 25px;
+                          padding-right: 10px;
+                          vertical-align: middle;
+                          letter-spacing: 4px;
+                        ">
+                      <span style="margin-right: 1px">7</span>
+                      <span style="margin-right: 1px">5</span>
+                      <span style="margin-right: 1px">6</span>
+                    </td>
+                    {% assign ahvChars = metaInfo[0].AHVNumber | split: '' %}
+
+                    {% for digit in ahvChars %}
+
+                    {% if forloop.index0 >3 %}
+
+                    {% if digit == '.' %}
+                    <td class="date-spacer">.</td>
+                    {% else %}
+                    <td class="date-box">{{ digit }}</td>
+                    <td style="width:2px"></td>
+                    {% endif %}
+
+                    {% endif %}
+
+                    {% endfor %}
+                  </tr>
+                  <tr style="visibility: hidden">
+                    <!-- Subscripts T T M M J J J J -->
+                    <td class="date-subscript">T</td>
+                    <td></td>
+                    <td class="date-subscript">T</td>
+
+                    <td></td>
+
+                    <td class="date-subscript">M</td>
+                    <td></td>
+                    <td class="date-subscript">M</td>
+
+                    <td></td>
+
+                    <td class="date-subscript">J</td>
+                    <td></td>
+                    <td class="date-subscript">J</td>
+                    <td></td>
+                    <td class="date-subscript">J</td>
+                    <td></td>
+                    <td class="date-subscript">J</td>
+                  </tr>
+                </table>
+              </td>
+
+              <!-- Birthdate -->
+              <td style="vertical-align: bottom">
+                <div class="date-label" style="margin-bottom: 5px">
+                  Geburtsdatum
+                </div>
+                <table role="presentation" style="width: auto">
+                  <tr>
+                    <!-- Day -->
+                    {% for digit in metaInfo[0].DateOfBirth %}
+
+                    <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}"> {{ digit }}</td>
+                    <td style="width: 2px"></td>
+                    {% endfor %}
+                  </tr>
+                  <tr>
+                    <!-- Subscripts T T M M J J J J -->
+                    <td class="date-subscript">T</td>
+                    <td></td>
+                    <td class="date-subscript">T</td>
+                    <td></td>
+                    <td class="date-subscript"></td>
+                    <td></td>
+
+                    <td class="date-subscript">M</td>
+                    <td></td>
+                    <td class="date-subscript">M</td>
+
+                    <td></td>
+                    <td class="date-subscript"></td>
+
+                    <td></td>
+
+                    <td class="date-subscript">J</td>
+                    <td></td>
+                    <td class="date-subscript">J</td>
+                    <td></td>
+                    <td class="date-subscript">J</td>
+                    <td></td>
+                    <td class="date-subscript">J</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Bottom Crop Marks -->
+      <div style="position: relative">
+        <div class="corner-bl"></div>
+        <div class="corner-br"></div>
+      </div>
+    </table>
+
+    <!-- Employer Info Section -->
+    <table role="presentation" style="width: 100%; margin-top: 8px">
+      <!-- Activity Row -->
+      <tr>
+        <td>
+          <div class="date-label">Ausgeübte Tätigkeit</div>
+          <div class="box-content" style="font-size: 25px; min-height: 20px">Sicherheitsmitarbeiterin</div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="height: 20px"></td>
+      </tr>
+
+      <!-- Employer Details Header -->
+      <tr>
+        <td>
+          <div style="font-weight: bold; font-size: 14px; margin-bottom: 2px">
+            Angaben zum Arbeitgeber
+          </div>
+          <div style="font-size: 11px; margin-bottom: 3px">
+            Wenn der Arbeitgeber eine juristische Person ist, bitte die Felder
+            BUR- und UID-Nummer ausfüllen, bei natürlichen Personen das Feld
+            AHV-Nummer.
+          </div>
+        </td>{% assign matched = false %}
+      </tr>
+
+      <!-- Employer Name Row -->
+      <tr>
+        <td>
+          <div class="date-label" style="margin-top: 16px">
+            Name des Arbeitgebers
+          </div>
+          <div class="font-size-25 box-content" style="padding: 5px; font-size: 16px; min-height: 20px">
+            {{metaInfo[0].OrganizationName}}
+          </div>
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <!-- Employer IDs (BUR, UID, AHV) -->
+    <table role="presentation" style="width: 100%">{% assign matched = false %}
+      <tr>
+        <!-- BUR Number -->
+        <td style="width: 30%; vertical-align: top">
+          <div class="date-label" style="margin-bottom: 5px">BUR-Nummer</div>
+          <table role="presentation" style="width: auto">
+            <tr>
+              {% for digit in metaInfo[0].BurNr %}
+              <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">{{digit}}</td>
+              <td style="width: 2px"></td>
+
+              {% endfor %}
+            </tr>
+          </table>
+        </td>
+
+        <!-- UID Number -->
+        <td style="width: 50%; vertical-align: top">
+          <div class="date-label" style="margin-bottom: 5px">UID-Nummer</div>
+          <table role="presentation" style="width: auto">
+            <tr>
+              <td style="
+                    font-size: 16px;
+                    padding-right: 5px;
+                    vertical-align: middle;
+                  ">
+                CHE -
+              </td>
+
+
+
+              {% for digit in metaInfo[0].VatNumber %}
+              <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">
+                {{ digit }}
+              </td>
+              <td style="width: 2px"></td>
+              {% endfor %}
+
+
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="height: 15px"></td>
+      </tr>
+
+      <!-- Employer AHV Number -->
+      <tr>
+        <td colspan="2">
+          <div class="date-label" style="margin-bottom: 5px">AHV-Nummer</div>
+          <table role="presentation" style="width: auto">
+            <tr>
+              <td style="
+                    font-size: 16px;
+                    padding-right: 10px;
+                    vertical-align: bottom;
+                    letter-spacing: 4px;
+                  ">
+                <span class="before-ahv-number">7</span>
+                <span class="before-ahv-number">5</span>
+                <span class="before-ahv-number">6</span>
+              </td>
+
+              <!-- First Group or Empty Boxes -->
+              <td class="date-box" style="width: 20px"></td>
+              <td style="width: 2px"></td>
+              <td class="date-box" style="width: 20px"></td>
+              <td style="width: 2px"></td>
+              <td class="date-box" style="width: 20px"></td>
+              <td style="width: 2px"></td>
+              <td class="date-box" style="width: 20px"></td>
+
+              <td class="date-spacer" style="padding-left: 5px; padding-right: 5px">
+                .
+              </td>
+
+              <!-- Second Group -->
+              <td class="date-box" style="width: 20px"></td>
+              <td style="width: 2px"></td>
+              <td class="date-box" style="width: 20px"></td>
+              <td style="width: 2px"></td>
+              <td class="date-box" style="width: 20px"></td>
+              <td style="width: 2px"></td>
+              <td class="date-box" style="width: 20px"></td>
+
+              <td class="date-spacer" style="padding-left: 5px; padding-right: 5px">
+                .
+              </td>
+
+              <!-- Third Group -->
+              <td class="date-box" style="width: 20px"></td>
+              <td style="width: 2px"></td>
+              <td class="date-box" style="width: 20px"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+
+    <!-- Responsible Contact Person -->
+    <table role="presentation" style="width: 100%; margin-top: 5px">
+      <tr>
+        <td style="width: 30%; vertical-align: middle">
+          <div style="font-weight: bold; font-size: 14px">
+            Verantwortliche Ansprechperson
+          </div>
+        </td>
+        <td style="width: 70%">
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <!-- Checkbox 1: der Firma -->
+              <td class="rectangle-box" style="width: 20px; font-size: 16px; line-height: 1">
+                <div class="rectangle-box-div" style="color: #000;">●</div>
+              </td>
+
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 30px;
+                    vertical-align: middle;
+                  ">
+                der Firma
+              </td>
+
+              <!-- Checkbox 2: Drittperson -->
+              <td class="rectangle-box" style="width: 20px">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="padding-left: 10px; vertical-align: middle">
+                Drittperson.
+                <span style="font-style: italic">Bitte Vollmacht beilegen.</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+
+
+    <!-- Contact Person Details -->
+    <table role="presentation" style="width: 100%; ">
+      <tr>
+        <!-- Name -->
+        <td style="width: 50%; padding-right: 15px">
+          <div class="date-label">Name</div>
+          <div class="box-content" style="
+                font-size: 25px;
+                min-height: 20px;
+                padding-left: 4px !important;
+              ">
+            Abteilung
+          </div>
+        </td>
+        <!-- Vorname -->
+        <td style="width: 50%">
+          <div class="date-label">Vorname</div>
+          <div class="box-content font-size-25" style="min-height: 20px">
+            HR
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div style="height: 10px"></div>
+
+    <!-- Telefon and E-Mail Row -->
+    <table role="presentation" style="width: 100%; ">
+      <tr>
+        <!-- Telefon -->
+        <td style="width: 30%; padding-right: 15px">
+          <div class="date-label">Telefon</div>
+          <div class="box-content font-size-25" style="min-height: 20px">
+            +41716267020
+          </div>
+        </td>
+        <!-- E-Mail -->
+        <td style="width: 70%">
+          <div class="date-label">E-Mail</div>
+          <div class="font-size-25 box-content" style="min-height: 20px">
+            payroll@delta.ch
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <!-- Question 1: Hours Grid -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          1
+        </td>
+        <td style="font-size: 13px; line-height: 1.4">
+          Tragen Sie die vom 1. bis zum 30./31.
+          <span style="text-decoration: underline">dieses Monats</span>
+          gearbeiteten Stunden in Dezimalzahlen ein. Es sind immer die
+          Arbeitsstunden dieses Kalendermonats anzugeben, unabhängig davon, ob
+          diese monatsübergreifend abgerechnet werden. Für bezahlte und/oder
+          unbezahlte Absenzen verwenden Sie bitte die folgenden Codes:
+          <br />
+          <span style="font-weight: bold">A</span> = Ferien &nbsp;&nbsp;
+          <span style="font-weight: bold">B</span> = Krankheit,
+          Schwangerschaft &nbsp;&nbsp;
+          <span style="font-weight: bold">C</span> = Unfall &nbsp;&nbsp;
+          <span style="font-weight: bold">D</span> = Mutterschaftsurlaub,
+          Urlaub des andern Elternteils (Vaterschaftsurlaub), Betreuungsurlaub
+          &nbsp;&nbsp; <span style="font-weight: bold">E</span> = Militär,
+          Zivildienst oder Zivilschutz &nbsp;&nbsp;
+          <span style="font-weight: bold">F</span> = Betriebsferien
+          &nbsp;&nbsp; <span style="font-weight: bold">G</span> = Unbezahlte
+          Absenzen (Für andere bezahlte Absenzen tragen Sie die entschädigten
+          Stunden ein).
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+
+    <!-- Calendar Grid 1-15 -->
+    <!-- Calendar Grid 1-15 -->
+    <table role="presentation" style="width: 100%; border-collapse: separate; border-spacing: 2px">
+      <!-- Day Labels 1-15 -->
+      <tr>
+        {% for day in (1..15) %}
+        <td style="text-align: center; font-size: 10px">{{ day }}</td>
+        {% endfor %}
+        <td style="width: 10%"></td> <!-- Spacer -->
+      </tr>
+
+      <!-- Input Boxes 1-15 -->
+      <tr>
+        {% for day in (1..15) %}
+        {% for wh in metaInfo[0].WorkingHours %}
+        {% if wh.DayNo == day %}
+        <td class="zero-box">{{ wh.HoursOrLeaveCategory }}</td>
+        {% assign matched = true %}
+        {% endif %}
+        {% endfor %}
+
+        {% if matched != true %}
+        <td></td>
+        {% endif %}
+
+        {% assign matched = false %}
+        {% endfor %}
+        <td></td> <!-- Spacer -->
+      </tr>
+    </table>
+
+
+
+    <!-- Calendar Grid 16-31 -->
+
+    <table role="presentation" style="width: 100%; border-collapse: separate; border-spacing: 2px">
+      {% assign monthName = metaInfo[0].TargetMonth %}
+      {% assign year = metaInfo[0].TargetYear %}
+      {% case monthName %}
+      {% when "Januar" %}{% assign totalDays = 31 %}
+      {% when "Februar" %}
+      {% assign febDays = 28 %}
+      {% if year | modulo: 4 == 0 %}{% assign febDays = 29 %}{% endif %}
+      {% assign totalDays = febDays %}
+      {% when "März" %}{% assign totalDays = 31 %} <!-- was "March" -->
+      {% when "April" %}{% assign totalDays = 30 %}
+      {% when "Mai" %}{% assign totalDays = 31 %} <!-- was "May" -->
+      {% when "Juni" %}{% assign totalDays = 30 %}
+      {% when "Juli" %}{% assign totalDays = 31 %}
+      {% when "August" %}{% assign totalDays = 31 %}
+      {% when "September" %}{% assign totalDays = 30 %}
+      {% when "Oktober" %}{% assign totalDays = 31 %}
+      {% when "November" %}{% assign totalDays = 30 %}
+      {% when "Dezember" %}{% assign totalDays = 31 %} <!-- was "December" -->
+      {% endcase %}
+
+      <!-- Day Labels 16-31 -->
+      <!-- <h1>{{monthName}}</h1> if issue the print month then  -->
+      <tr>
+        {% for day in (16..totalDays) %}
+        <td style="text-align: center; font-size: 10px">{{ day }}</td>
+        {% endfor %}
+        <td style="width: 10%"></td> <!-- Spacer -->
+      </tr>
+
+      <!-- Input Boxes 16-31 -->
+      <tr>
+        {% for day in (16..totalDays) %}
+        {% assign matched = false %}
+        {% for wh in metaInfo[0].WorkingHours %}
+        {% if wh.DayNo == day %}
+        <td class="zero-box">{{ wh.HoursOrLeaveCategory }}</td>
+        {% assign matched = true %}
+        {% endif %}
+        {% endfor %}
+
+        {% if matched == false %}
+        <td></td>
+        {% endif %}
+        {% endfor %}
+        <td></td> <!-- Spacer -->
+      </tr>
+    </table>
+
+
+
+    <!-- calender end  -->
+
+    <br />
+
+    <div style="font-weight: bold; font-size: 14px">
+      Für Zwischenverdienst als Selbständigerwerbende bitte bei Frage 14
+      fortfahren.
+    </div>
+
+    <br />
+
+
+    <!-- Question 2 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          2
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: top">
+                Wurde ein schriftlicher Arbeitsvertrag unterzeichnet?
+              </td>
+
+              <!-- Checkbox: nein -->
+              <!-- <td class="date-box" style="width: 20px"></td> -->
+              <td style="vertical-align: middle">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 20px;
+                    vertical-align: middle;
+                  ">
+                nein
+              </td>
+
+              <!-- Checkbox: ja -->
+              <!-- <td
+                  class="date-box"Calend
+                  style="width: 20px; font-size: 16px; line-height: 1"
+                >
+                  ●
+                </td>
+                <td style="padding-left: 10px; vertical-align: middle">
+                  ja.
+                  <span style="font-style: italic"
+                    >Kopie des Vertrages, resp. bei Temporäranstellungen der
+                    Einsatzverträge, beilegen.</span
+                  >
+                </td> -->
+              <td class="rectangle-box" style="width: 20px; font-size: 16px; line-height: 1">
+                <div class="rectangle-box-div"><span style="color: #000;">●</span></div>
+              </td>
+              <td style="
+                    padding-left: 6px;
+                    padding-right: 30px;
+                    vertical-align: middle;
+                  ">
+                ja.
+                <span style="font-style: italic">Kopie des Vertrages, resp. bei Temporäranstellungen der
+                  Einsatzverträge, beilegen.</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+    <!-- Question 3 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: middle;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          3
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: middle">
+                Wurde mit dem/der Arbeitnehmenden eine wöchentliche
+                Arbeitszeit vereinbart?
+              </td>
+              <td style="vertical-align: middle; width: 3%">
+                <div class="rectangle-box-div">
+                  <span style="color: #000;">●</span>
+                </div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 20px;
+                    vertical-align: middle;
+                    width: 7%;
+                  ">
+                nein
+              </td>
+
+              <td style="vertical-align: middle; width: 2%">
+                <div class="rectangle-box-div">
+                </div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 20px;
+                    vertical-align: middle;
+                    width: 3%;
+                  ">
+                ja
+              </td>
+
+              <!-- Std. pro Woche -->
+              <td style="vertical-align: top; padding-top:-6px !important">
+                <div class="date-label">Std. pro Woche</div>
+                <div style="background-color: #dbe4eb; height: 36px; width: 80px">
+
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <!-- Question 4 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          4
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: top">
+                Wie viel beträgt die wöchentliche Normalarbeitszeit im
+                Betrieb?
+              </td>
+
+
+              <!-- Std. pro Woche -->
+              <td style="vertical-align: top">
+                <div class="date-label">Std. pro Woche</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 36px;
+                      width: 80px;
+                      text-align: center;
+                      box-sizing: border-box;
+                      padding-top: 5px;
+                    ">
+                  42.50
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Question 5 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+              padding-top: 16px;
+            ">
+          5
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: middle">
+                Unterliegt das Arbeitsverhältnis einem Gesamtarbeitsvertrag?
+              </td>
+              <td style="vertical-align: middle; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    vertical-align: middle;
+                    width: 7%;
+                  ">
+                nein
+              </td>
+              <td style="vertical-align: middle; width: 2%">
+                <div class="rectangle-box-div">
+                  <span style="color: #000;">●</span>
+
+                </div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 20px;
+                    vertical-align: middle;
+                    width: 3%;
+                  ">
+                ja
+              </td>
+              <td style="vertical-align: top">
+                <div class="date-label">GAV</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 36px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      width: 320px;
+                      font-size: 14px;
+                    ">
+                  GAV Sicherheit
+                </div>
+              </td>
+              <td style=" width: 50px;  text-align: right;">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIYAAACHCAYAAADTJSE0AAAABHNCSVQICAgIfAhkiAAAABl0RVh0U29mdHdhcmUAZ25vbWUtc2NyZWVuc2hvdO8Dvz4AAAAtdEVYdENyZWF0aW9uIFRpbWUAV2VkIDI4IEphbiAyMDI2IDExOjU0OjUxIEFNICswNhamvM0AAARXSURBVHic7d3bspswDIXhpNP3f+X0KjOUWQELLdki+b/bcnCotmx84vl6vV4PYOfP6gKgJwIDEoEBicCARGBAIjAgERiQCAxIf88OeD6fM8rxn22f2/7+0f44R/mPyhM5d2/2s408OzIGJAIDEoEB6bSNsecec4vWsyPHR8v46fj3vbb33B+rypNpIzmfb6YNQ8aARGBAClclivMVrruR3+p8DV31bMkYkCwZo9LIX0DnjHXX7EjGgERgQGpflVT0W2Suf9QvsWJcqQoZAxKBAal9VdLBN1URo9oHxsjYROT8yPGzO7M6oSqBRGBAal+VVDhK/+6qITs1cRUyBiRLxrj72EPnTqpVGYaMAYnAgBSuSman2pHGW3T8Yv/vn+Z0np07ev2ILlUZGQMSgQHpJ/sxMrqk+mqngXGXDpmtyH/e7LEY17nVqEogERiQwtsgjLwuHh2fraMddXxm2WB0nCW6DULk+OizZRsEpN3irSTaYYW8WwTGmTsFw13KSlUC6RndZN6RyiO3dDd+z44fvcbVazmvf/YcM5OEyBiQCAxIS/bHyKTfFY236nsebeU0et6V849Y9uCa2cE1wr0H1+i5V+dvZK4/em4UVQkkAgOS5XX1SLbOi75yOddxOKb2ZUWu7/ztZAxIBAakrx8rce/cW63LWAoZA1LZRB1X38CV8zPcjcmKPbve5+3L5cx2ZAxIBAaklksUuzTA3qJjGavK75zzGV5Xkv3R2QfrWLt6JDO3xNH5V72v6SiqEkgEBqTydSWrtwmornqi97pyjRXIGJAIDEhLXle7TpXL3mvkns7jK58jGQNS+XaOZ/0g0Yk3Ue49uLrjY3koRWBAsn/Cu2LKfVRlP0l2Yk9mzur+k+KqmnY1vNvP4Oo8aDWiS4dVFFUJJAIDUtm6kpnT4ZxD5dWvq9VrTlz3ImNAIjAghYfd3bq9Uawuz+r7v5ExIJXvj3Hl2Or9uZ2TcSobgFnswQU7AgNS2WcpMv0dK/foWj0NwLkHV6as7cdK9rqNPawsT+W9qUog3S5jzDSSijttteRUPhn47PWuev6Guw0TfV29GlwjKoOGqgQSgQHpFm2MTLqeuZ218xorr/94kDHwgX0ysPv87KLqaBmq/xqzv7/yXltkDEgEBqTlE3UU56LgM845otHrV/RDuNaVkDEgERiQCAxI019X99xtmG6vm5XXqvysGBkDEoEBacnnNSMpdCRdOlPo0bYDo+U54igrOwNjmVuMrm45NnTtNm/Uhe+VoByBAal9VXKlsebaR2skNTvWcTjX7jDnE6UIDEjtq5Jf4+yTyax2v11gzJwad/V6o2VUHWgRLFHEdAQGpPKvD7hV78jjeAXMjK2MHJ/5CvYoMgak9o3Pisko3zpW4kTGgERgQGr5bffs/TLbS1ZXM2djK5HyMFaC6QgMSAQGpPD3SvAbyBiQCAxIBAYkAgMSgQGJwIBEYEAiMCARGJAIDEj/AKvyXs8nZg1uAAAAAElFTkSuQmCC"
+                  alt="Icon" style="width: 64px; height: 64px;" />
+              </td>
+
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <table role="presentation" style="width: 100%">
+      <tr>
+        <td style="text-align: center;">
+          <div style="display: inline-block; margin-top: 12px;">
+            <img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANsAAABsCAYAAADjTMeNAAAABHNCSVQICAgIfAhkiAAAABl0RVh0U29mdHdhcmUAZ25vbWUtc2NyZWVuc2hvdO8Dvz4AAAAtdEVYdENyZWF0aW9uIFRpbWUAV2VkIDI4IEphbiAyMDI2IDExOjU1OjI0IEFNICswNvupAKAAAAnxSURBVHic7dt5eBTlAcfx72x2E4KSVIKgFvs84lUCcjxWESzWJIgkBBXFcHnU1iqHhYrlQRC0FkUJBEFEqNVaUQrSp3080Rb1sYdI1YJgnwpNhBAsuSkhB5js7vSP2Z1kyWwOlTd/+Pv8tTvvOTP723mf2VnLtm0bETnpfF09AZFvCoVNxBCFTcQQhU3EEIVNxBCFTcQQhU3EEIVNxBCFTcQQhU3EEIVNxBCFTcQQhU3EEIVNxBB/ZxuE7TAATY1NMdt9Pie3gUCAYDAIQCgUwu93hkhISHDr2rZNY2Oj+z4xMREAy7LaHb8pGCQcCjmTDwRIiIzb2NhI9N9CiYmJcfsKRdpG5xjlNc+WTpxzlM/nc9u2HDMYDLpj+f3+VvsfnXM8Pp+PQCAQM9dof1HRcsuyaGpqIt6/paLzih7nlnNs2W+8eUb7bu88tewvIXo8fT53ezgcjqnfXn+hUKjVefKaZ0sdOraRtv6EBIKRfQ+3+Kz6fD6amppi+uvonNvS6bAVHzgIQHb2Ndh2mOhcrrt2HADL8peQv/wxAJ59dj3L8h+JlOe6fYRCITJH5UTe2Wx57SUAUlNT2h3/oYceZdOLvwfgyTWryMq8EoBrr8uj+nA1AC/9cTNnnXWmZ/tXXn0dgHn3LgScyds25D/6MADjx1/j2e5ITQ0ZmWMAaGiod7cPH34Zv3l6HRAb1IeXLGXD7zYBsKJgGbljx7hl0RN8+chMjh496jleVmYGa5983NnPtU8B8MSatZFS50Q/8+u1kTkMIyf3ekpKDnj2NXToUABe3Lg+ZvvKVU8A8KunngHgsYKl5ObmuOU1Nc7cJuRNobqqmu3b/wpA0gmhjXpu/QYAHl26nEWL5gNw05RJzLhrNgDvvvs3op9Rny+Bf7z/FwBSU1M9+3v55deYN3+hs8ctPtuLf/kAE/MmeLYpLS0D4IYbJ1NdXd2q3LbhpqmTALh/0QLy81cA8Nvn1rN6lfM6KyuDCROnArDn0z1u29TUVLa99y4AAX+no6NlpIgpnY5nMHJ5LSoqilkWlJeXu68rK6rcOnV1dZ79FBfvB5xvGtsOe9bxUllZSVFREQANDQ3u9pKDJZSXVzhz9Fh6REW/rQsLC2O218aZZ1QoFGbfPmfOtbXNV6O+fft61q+oqKSw0JlnvGOwb38x/zt82LMsPb2/+7q6yvmGLvxPEVjNS5iGY8fcOgdKSiiKjHei3r17e26vjowdPZ61dfUx5dHze+BACYdKS6GdP/UfOXLE7e9oTfMxOnSoLGYcAMvytVpWnqi2rjamjTtOjfdqAJrP/f79xTGfyZYqq6rc11WRq19R0WfUtdj/A8UlAO45BOiZltbmfNujK5uIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCEKm4ghCpuIIQqbiCH+zjaw7Q7UwfZ87d1PvBrxxm/Rt+29vb3ZtddvvHbeM+3M7E8cs62y9vuNPRZt1W/vHHj30by/dod2M9758D5qHdm/Vo3iFHRO/Hm27Lf1GF9x2M6HLS3tNAAWLZyPTfNkhwwa5NbJvno0AKkpPRh00cBWfViWxZw5s503tk23pG4dHn/s2Gx69+kNwIUXnu9unzFjGvV1dQCkpKbEbT9k8GAA7l90H1i4cxgyZFDcNgDdk5OZP28uAF80fuGei379zsGyrFb1c3Ky6dWrFwADBqbHlPki9e+dO4eG48c8x7vwggvc11dmXOG8sKzmOQPnndcvstli1l3TqT582LOvs/v29dw+KisDgMRAAICLLhoQU57cLRmAu2ZOp76+gYSEBM9+okaMGAbAooULuPTS77nbp06eCMAlFw919gHwWT66dWv7vA8ZMoj7Fy1w3liWe8wvvnho3DapkXN/z92zqWuob1Vu2zbDLr3EfZ999VUApPToQXp6f2duPh/Tpt0BQFlpmXvMuyd3d8/dl6FlpIghlt3x9ZeIfAW6sokYorCJGNLpGyTy9frgw48AeO31N/jpzOkAnH56rzbb7NixE4CdH+8G4Ee33YJlWRw/fhyAzZv/AEDN0aMx7QYOcG7UZGT84GuavXSGwtaFgsEgK1Y8DsDWt94hrWcaALNnzYjbprr6MLffMROA0077FuCEDaCsvByABQsfAGD4ZcPw+xPcW9bJyc7dRYWta2gZKWKIrmxdqKTkc7Zv/wCA+fPnsmHjJgBu//GtnHLKKa3qB4NBHly8BF/kp54Tf987ePBzAHqm9QRg/XNPk5iY6JZ7/R4o5ihsXejlV16lf//vAnDrzVNZ/fgaAN57731Gjx7Vqv7rW95kz569TJ9+JwAbN22OKf945y4Aep/u/Oj//IZNVFdVccXI7wMwfMRlJ2dHpEO0jBQxRFe2LhAKhwF4YcNGZs6YBkBaWk9yx40FnCtSZlYG/sjjUWXlFQAsXvwI69au5rN9+1r1GQ6H2f3JvwD496efArB3714aGo4xIW8KAAUFSwGYMinvZO2atEFh6wL//GgHAMX7i0lJ6QHA37dt54LzzwPgFw8u5tB/D9GnTx8A5twzD4BJk/MYPHgQhUVFQPNzqaFQKPI8308AmDXLuVs5cEA6tm2T3t955m/Jw07YxuXm0OPUU0/6fkosLSNFDNGzkYbZts2MmT8D4M9bt3Luuee2qrNr127m/vxuRgx3bmhkXZUDwMiRl+P3J1BaWgZAycGDAGSPHs3adasJNgUB6N69OwBJSc6dyB07PgZg7LjxAHz04Ta+fdaZJ2X/JD4tIw2rqKjkjTf/BMCaJ1aSPcb5O1LLb7zlBStZ//wG8vImAPDC889G6ji1tm3bDsBbb78DwMTJedi2zU233AbA1CmTAJgS+WvLzl3OXcozzzgDgJ6RH8PFLC0jRQzRlc2Q6Gp969a3CYVCAGRlXonP1/r77sYbxpOfX8DuXZ8AcMP118aUB5uaAGe5CZCbMwaAqyN/2r0v8rhWbV09x48do2DFKgBWFOQDzY9tiVkKm2EpqamsfGw5AElJSZ51+vU7h2X5SwgkBjzLBw50/v3+w1tvdrdZlsX0O28H4Dtnnw3Ali1v4A8EeObpdQBcNSrz69kJ+VK0jBQxRHcjRQzRlU3EEIVNxBCFTcQQhU3EEIVNxBCFTcQQhU3EEIVNxBCFTcQQhU3EEIVNxBCFTcQQhU3EEIVNxJD/A4ySOdtzEEdGAAAAAElFTkSuQmCCs"
+              alt="1 of 3" style="display: block; height: 46px; width: 120px;" />
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <!-- Question 6 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          6
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: top">
+                Haben Sie in diesem Monat <br />mehr Arbeit angeboten?
+              </td>
+              <td style="vertical-align: middle; width: 3%">
+                <div class="rectangle-box-div">
+                  <span style="color: #000;">●</span>
+
+                </div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 3%;
+                  ">
+                nein
+              </td>
+              <td style="vertical-align: middle; width: 2%">
+                <div class="rectangle-box-div">
+
+                </div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 3%;
+                  ">
+                ja
+              </td>
+              <td style="width: 1%"></td>
+
+              <td style="vertical-align: bottom; width: 20%;">
+                <div class="date-label">Std. pro Tag</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                    ">
+
+                </div>
+              </td>
+              <td style="width: 1%"></td>
+
+              <td style="vertical-align: bottom; width: 20%;">
+                <div class="date-label">Std. pro Woche</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                    ">
+
+                </div>
+              </td>
+              <td style="width: 1%"></td>
+
+              <td style="vertical-align: bottom; width: 20%;">
+                <div class="date-label">Std. pro Monat</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                    ">
+                </div>
+              </td>
+              <td style="width: auto;"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <!-- Question 7 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          7
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: top">
+                Falls der/die Arbeitnehmende das Arbeitsangebot abgelehnt hat, für welchen Zeitraum wurde ein höheres
+                Pensum angeboten und mit welcher Begründung wurde dies abgelehnt?
+              </td>
+
+              <td style="vertical-align: bottom">
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 96px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      width: 100%;
+                      font-size: 14px;
+                    ">
+                  Für den entsprechenden Monat werden auf einer individuellen Wunschliste sämtliche Einsatzmöglichkeiten
+                  laufend publiziert. Mitarbeiter-/innen können sich nach ihren eigenen Wünschen anmelden. Falls sich
+                  Mitarbeiter-/innen für keinen Einsatz melden, werden sie dementsprechend nicht für Einsätze geplant.
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;">
+
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 16px; font-weight: bold; width: 100%; vertical-align: top">
+                Einkommen aus unselbständiger Erwerbstätigkeit
+              </td>
+              <br>
+            </tr>
+          </table>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top">
+                Bitte die Lohnabrechnungen für die Arbeitsstunden dieses Monats beilegen.
+              </td>
+              <br>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <!-- Question 8 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          8
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; font-weight: bold; width: 30%; vertical-align: top">
+                Vereinbartes Bruttoeinkommen
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+
+
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: top">
+                <b>Bei Monatslohn</b> <br /> <span>AHV-pflichtiger Bruttolohn in CHF</span>
+              </td>
+
+              <td style="vertical-align: bottom; width: 160px;;">
+                <div class="date-label">Monatslohn</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                       width: 100%;
+                      font-size: 14px;
+                    ">
+                </div>
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+              <td style="vertical-align: bottom; width: 160px;">
+                <div class="date-label">13. Monatslohn</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                       width: 100%;
+                    ">
+                </div>
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width: 160px;">
+
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width: 160px;">
+
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width: 160px;">
+
+              </td>
+
+              <td style="width: auto;"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: top">
+                <b>Bei Stundenlohn</b> <br /> <span>AHV-pflichtiger Stundenlohn</span> <br> <span>pro Stunde in
+                  CHF</span>
+              </td>
+
+              <td style="vertical-align: bottom; width: 160px;;">
+                <div class="date-label">Grundlohn</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                       width: 100%;
+                      font-size: 14px;
+                    ">
+                </div>
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+              <td style="vertical-align: bottom; width: 160px;;">
+                <div class="date-label">Feiertagsentschädigung</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                       width: 100%;
+                    ">
+                </div>
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width: 160px;;">
+                <div class="date-label">Ferienentschädigung</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                       width: 100%;
+                    ">
+                </div>
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width: 160px;;">
+                <div class="date-label">13. Monatslohn</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                       width: 100%;
+                      font-size: 14px;
+                    ">
+                </div>
+              </td>
+              <td style="width: 24px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width: 160px;;">
+                <div class="date-label">Bruttolohn</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 32px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                       width: 100%;
+                    ">
+
+                </div>
+              </td>
+
+              <td style="width: auto;"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <!-- Question 9 -->
+
+    <table role="presentation" style="width: 100%; margin-left: -22px;">
+      <tr>
+        <td style="
+        vertical-align: top;
+        width: 20px;
+        font-weight: bold;
+        font-size: 14px;
+      ">
+          9
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%;">
+            <tr>
+              <td style="
+              font-size: 14px;
+              font-weight: bold;
+              width: 100%;
+              vertical-align: top;
+              padding-bottom: 2px;
+            ">
+                Zusammensetzung des Bruttoeinkommens des aktuellen Monats
+              </td>
+            </tr>
+
+            <tr>
+              <td style="
+              font-size: 14px;
+              width: 100%;
+              vertical-align: top;
+              padding-bottom: 4px;
+            ">
+                Bitte geben Sie an, wie sich der gesamte AHV-pflichtige Bruttolohn
+                im Monats- oder Stundenlohn im Detail für diesen Monat zusammensetzt.
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top;">
+                *Bei Stundenlohn bitte zwingend ausfüllen.
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top;">
+                **Für welchen Zeitraum wurde der Betrag bezahlt.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <!-- Question 9 calculation -->
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: top;
+        padding-top: 12px;
+      ">
+          Anzahl geleistete Stunden
+        </td>
+
+        <td style="vertical-align: top;">
+        <td style="vertical-align: bottom">
+          <div class="date-label">Anzahl Std.</div>
+          <div style="
+                      background-color: #dbe4eb;
+                      height: 42px;
+                      line-height: 42px;
+                      padding: 2px 5px;
+                      width: 180px;
+                      font-size: 14px;
+                    ">
+            {{metaInfo[0].TotalHour}}
+
+          </div>
+        </td>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Question 9 calculation -->
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: top;
+        padding-top: 12px;
+      ">
+          Grundlohn
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 200px;">
+          &nbsp;
+        </td>
+
+        <!-- 20px gap -->
+        <td style="width: 40px;">&nbsp;</td>
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation">
+            <tr>
+              <td style="font-size: 12px; padding-bottom: 4px;">
+                CHF
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              line-height: 42px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- Remaining space -->
+        <td style="width: auto;">&nbsp;</td>
+      </tr>
+    </table>
+
+    <!-- Question 9 calculation -->
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: middle;
+        text-align: left;
+      ">
+          *Feiertagsentschädigung
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 200px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: start;">
+                %
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- 20px gap with = sign -->
+        <td style="
+    width: 40px;
+    padding-top: 20px;
+    text-align: center;       /* horizontally center */
+    vertical-align: middle;   
+    font-size: 14px;
+  ">
+          =
+        </td>
+
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 180px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: center;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              vertical-align: middle;
+              font-size: 14px;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- Remaining space -->
+        <td style="width: auto;">&nbsp;</td>
+      </tr>
+    </table>
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: middle;
+        text-align: left;
+      ">
+          *Ferienentschädigung
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 200px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: start;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            "> {{metaInfo[0].HolidayCompensationPercentage}}
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- 20px gap with = sign -->
+        <td style="
+    width: 40px;
+    padding-top: 20px;
+    text-align: center;      
+    vertical-align: middle;   
+    font-size: 14px;
+  ">
+          =
+        </td>
+
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 180px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: center;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- Remaining space -->
+        <td style="width: auto;">&nbsp;</td>
+      </tr>
+    </table>
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: middle;
+        text-align: left;
+      ">
+          Anteil 13. Monatslohn
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 200px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: start;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- 20px gap with = sign -->
+        <td style="
+          width: 40px;
+          padding-top: 20px;
+          text-align: center;      
+          vertical-align: middle;   
+          font-size: 14px;
+        ">
+          =
+        </td>
+
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 180px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: center;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="width: 48px;">&nbsp;</td>
+
+
+        <!-- Checkbox -->
+        <!-- <td style="width: 60px; height: 60px; text-align: center; padding-top: 8px; vertical-align: middle;">
+          <input type="checkbox" style="
+           width: 32px;
+           height: 32px;
+           display: inline-block; 
+           vertical-align: middle;
+         ">
+        </td> -->
+        <td
+          style="width: 40px; height: 60px; padding-left: 18px; text-align: center; padding-top: 8px; vertical-align: bottom;">
+          <div class="rectangle-box-div2" style="padding:0px; font-size: 20px;">√</div>
+        </td>
+
+
+        <!-- Comment text -->
+        <td style="
+        font-size: 14px;
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 8px;
+      ">
+          13. Monatslohn ist weder vertraglich vereinbart noch betriebsüblich
+        </td>
+      </tr>
+    </table>
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: middle;
+        text-align: left;
+      ">
+          Taggeldleistungen
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 200px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: start;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- 20px gap with = sign -->
+        <td style="
+        width: 40px;
+        text-align: center;      
+        vertical-align: middle;   
+        font-size: 14px;
+      ">
+          =
+        </td>
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 180px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: center;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="width: 66px;">&nbsp;</td>
+
+
+        <!-- Third box (fills remaining space) -->
+        <td style="vertical-align: top; width: auto;">
+          <table role="presentation" style="width: 100%; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: start;">welche?</td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: middle;
+        text-align: left;
+      ">
+          Andere Lohnbestandteile
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 200px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: start;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+
+        <!-- 20px gap with = sign -->
+        <td style="
+        width: 40px;
+        text-align: center;      
+        vertical-align: middle;   
+        font-size: 14px;
+      ">
+          =
+        </td>
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 180px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: center;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="width: 66px;">&nbsp;</td>
+
+
+        <!-- Third box (fills remaining space) -->
+        <td style="vertical-align: top; width: auto;">
+          <table role="presentation" style="width: 100%; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: start;">welche?</td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+                siehe beil. Lohnabrechnung
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- bouns -->
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: middle;
+        text-align: left;
+      ">
+          **Bonus / Gratifikation
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 200px;">
+          &nbsp;
+        </td>
+
+        <!-- 20px gap with = sign -->
+        <td style="  width: 40px;">&nbsp;</td>
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation" style="width: 180px; height: 42px;">
+            <tr>
+              <td style="font-size: 12px; text-align: center;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              padding-top: 4px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">
+              </td>
+            <tr>
+              <td style="vertical-align: bottom; padding-top: 4px;">
+                <div style="width: 180px;">
+                  <div style="height:2px; background:#000;"></div>
+                </div>
+              </td>
+            </tr>
+      </tr>
+    </table>
+    </td>
+    <td style="width: 66px;">&nbsp;</td>
+
+    <td style="vertical-align: bottom">
+      <div class="date-label" style="margin-bottom: 5px">
+        von
+      </div>
+      <table role="presentation" style="width: auto">
+        <tr>
+          <!-- Day -->
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+
+          <td class="date-spacer">.</td>
+
+          <!-- Month -->
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+
+          <td class="date-spacer">.</td>
+
+          <!-- Year -->
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+        </tr>
+        <tr>
+          <!-- Subscripts T T M M J J J J -->
+          <td class="date-subscript">T</td>
+          <td></td>
+          <td class="date-subscript">T</td>
+
+          <td></td>
+
+          <td class="date-subscript">M</td>
+          <td></td>
+          <td class="date-subscript">M</td>
+
+          <td></td>
+
+          <td class="date-subscript">J</td>
+          <td></td>
+          <td class="date-subscript">J</td>
+          <td></td>
+          <td class="date-subscript">J</td>
+          <td></td>
+          <td class="date-subscript">J</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width: 36px;">&nbsp;</td>
+
+    <td style="vertical-align: bottom;">
+      <div class="date-label" style="margin-bottom: 5px">
+        bis
+      </div>
+      <table role="presentation" style="width: auto">
+        <tr>
+          <!-- Day -->
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+
+          <td class="date-spacer">.</td>
+
+          <!-- Month -->
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+
+          <td class="date-spacer">.</td>
+
+          <!-- Year -->
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+          <td style="width: 2px"></td>
+          <td class="date-box" style="width: 20px"></td>
+        </tr>
+        <tr>
+          <!-- Subscripts T T M M J J J J -->
+          <td class="date-subscript">T</td>
+          <td></td>
+          <td class="date-subscript">T</td>
+
+          <td></td>
+
+          <td class="date-subscript">M</td>
+          <td></td>
+          <td class="date-subscript">M</td>
+
+          <td></td>
+
+          <td class="date-subscript">J</td>
+          <td></td>
+          <td class="date-subscript">J</td>
+          <td></td>
+          <td class="date-subscript">J</td>
+          <td></td>
+          <td class="date-subscript">J</td>
+        </tr>
+      </table>
+    </td>
+
+
+    <!-- Third box (fills remaining space) -->
+    <td style="vertical-align: top; width: auto;">
+
+    </td>
+    </tr>
+    </table>
+
+    <table role="presentation" style="width: 100%;">
+      <tr>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: top;
+        padding-top: 12px;
+      ">
+          Total Bruttolohn
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 200px;">
+          &nbsp;
+        </td>
+
+        <!-- 20px gap -->
+        <td style="width: 40px;">&nbsp;</td>
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+          <table role="presentation">
+            <tr>
+              <td style="font-size: 12px; padding-bottom: 4px;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td style="
+              background-color: #dbe4eb;
+              width: 180px;
+              height: 42px;
+              line-height: 42px;
+              text-align: start;
+              font-size: 14px;
+              vertical-align: middle;
+            ">{{metaInfo[0].AHVGrossSalary}}
+              </td>
+            <tr>
+              <td style="vertical-align: bottom; padding-top: 4px;">
+                <div style="width: 180px;">
+                  <div style="height:2px; background:#000;"></div>
+                  <div style="height:2px;"></div>
+                  <div style="height:2px; background:#000;"></div>
+                </div>
+              </td>
+            </tr>
+
+
+      </tr>
+    </table>
+    </td>
+
+    <!-- Remaining space -->
+    <td style="width: auto;">&nbsp;</td>
+    </tr>
+    </table>
+    </tr>
+    </table>
+
+    <br />
+    <!-- Question 10 -->
+
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          10
+        </td>
+        <!-- Label -->
+        <td style="
+        font-size: 14px;
+        width: 20%;
+        vertical-align: top;
+        text-align: left;
+      ">
+          Wird das Arbeitsverhältnis weiter- <br />mgeführt?
+        </td>
+
+        <!-- First box -->
+        <td style="vertical-align: top; width: 240px;">
+          <table role="presentation" style="width: 240px; height: 42px;">
+            <td style="vertical-align: middle;">
+              <div class="rectangle-box-div">
+              </div>
+            </td>
+            <td style="
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    ">
+              befristet bis
+            </td>
+          </table>
+        </td>
+
+
+
+        <!-- Second box -->
+        <td style="vertical-align: top; width: 180px;">
+
+        </td>
+        <td style="width: 66px;">&nbsp;</td>
+
+
+        <!-- Third box (fills remaining space) -->
+        <td style="vertical-align: top; width: auto;">
+          <table role="presentation" style="width: 100%; height: 42px;">
+            <td style="vertical-align: bottom">
+              <div class="date-label" style="margin-bottom: 5px">
+                &nbsp;
+              </div>
+              <table role="presentation" style="width: auto">
+                <tr>
+                  <!-- Day -->
+                  <td class="date-box" style="width: 20px"></td>
+                  <td style="width: 2px"></td>
+                  <td class="date-box" style="width: 20px"></td>
+
+                  <td class="date-spacer">.</td>
+
+                  <!-- Month -->
+                  <td class="date-box" style="width: 20px"></td>
+                  <td style="width: 2px"></td>
+                  <td class="date-box" style="width: 20px"></td>
+
+                  <td class="date-spacer">.</td>
+
+                  <!-- Year -->
+                  <td class="date-box" style="width: 20px"></td>
+                  <td style="width: 2px"></td>
+                  <td class="date-box" style="width: 20px"></td>
+                  <td style="width: 2px"></td>
+                  <td class="date-box" style="width: 20px"></td>
+                  <td style="width: 2px"></td>
+                  <td class="date-box" style="width: 20px"></td>
+                </tr>
+                <tr>
+                  <!-- Subscripts T T M M J J J J -->
+                  <td class="date-subscript">T</td>
+                  <td></td>
+                  <td class="date-subscript">T</td>
+
+                  <td></td>
+
+                  <td class="date-subscript">M</td>
+                  <td></td>
+                  <td class="date-subscript">M</td>
+
+                  <td></td>
+
+                  <td class="date-subscript">J</td>
+                  <td></td>
+                  <td class="date-subscript">J</td>
+                  <td></td>
+                  <td class="date-subscript">J</td>
+                  <td></td>
+                  <td class="date-subscript">J</td>
+                </tr>
+              </table>
+            </td>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Question 10 second section -->
+<table role="presentation" style="width: 100%; margin-left: -22px">
+  <tr>
+    <td style="vertical-align: top; width: 20px; font-weight: bold; font-size: 14px;">&nbsp;</td>
+    <td>
+      <table role="presentation" style="width: 100%">
+        <tr>
+          <td style="font-size: 14px; width: 20%; vertical-align: top">&nbsp; </td>
+          <td style="vertical-align: middle; width: 36px">
+            <div class="rectangle-box-div">
+              {% if metaInfo[0].TerminationDate == "" %}<span style="color: #000;">●</span>{% endif %}
+            </div>
+          </td>
+          <td style="padding-left: 10px; padding-right: 10px; vertical-align: middle; width: 10%;">
+            ja, unbefristet
+          </td>
+          <td style="width: auto">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<table role="presentation" style="width:100%; margin-left:-22px;">
+  <tr>
+    <td style="width: 20%; ">&nbsp;</td>
+    <td style="width: 20%;">
+      <table role="presentation" style="width:100%;">
+        <tr>
+          <td style="width:36px; padding-left: 16px; padding-right: 10px; vertical-align:middle;">
+            <div class="rectangle-box-div">
+              {% if metaInfo[0].TerminationDate != "" %}<span style="color: #000;">●</span>{% endif %}
+            </div>
+          </td>
+          <td style="vertical-align:middle;">nein. Wer hat gekündigt?</td>
+        </tr>
+      </table>
+    </td>
+
+    <td style="width:160px;">
+      <table role="presentation" style="width:100%;">
+        <tr>
+          <td style="width:36px; vertical-align:middle;">
+            <div class="rectangle-box-div">
+              {% if metaInfo[0].TerminationBy == "Employer" %}<span style="color: #000;">●</span>{% endif %}
+            </div>
+          </td>
+          <td style="padding:0 10px; vertical-align:middle;">Arbeitgeber</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:84px;">&nbsp;</td>
+
+    <td style="width:120px;">
+      <table role="presentation" style="width:100%;">
+        <tr>
+          <td style="width:36px; vertical-align:middle;">
+            <div class="rectangle-box-div"></div>
+          </td>
+          <td style="padding:0 10px; vertical-align:middle;">mündlich</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:86px;">&nbsp;</td>
+    <td style="width:auto;">&nbsp;</td>
+  </tr>
+</table>
+
+<br>
+
+<table role="presentation" style="width:100%; margin-left:-22px;">
+  <tr>
+    <td style="width: 20%;">&nbsp;</td>
+    <td style="width: 20%;">&nbsp;</td>
+
+    <td style="width:160px;">
+      <table role="presentation" style="width:100%;">
+        <tr>
+          <td style="width:36px; vertical-align:middle;">
+            <div class="rectangle-box-div">
+              {% if metaInfo[0].TerminationBy == "Employee" %}<span style="color: #000;">●</span>{% endif %}
+            </div>
+          </td>
+          <td style="padding:0 10px; vertical-align:middle;">Arbeitnehmende/r</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:96px;">&nbsp;</td>
+
+    <td style="width:120px;">
+      <table role="presentation" style="width:100%;">
+        <tr>
+          <td style="width:36px; vertical-align:middle;">
+            <div class="rectangle-box-div">
+              {% if metaInfo[0].TerminationDate != "" %}<span style="color: #000;">●</span>{% endif %}
+            </div>
+          </td>
+          <td style="padding:0 10px; vertical-align:middle;">schriftlich</td>
+        </tr>
+      </table>
+    </td>
+    <td style="width:200px;">
+      <span style="font-size: 11px;">Bitte Kopie der <br> Kündigung beilegen.</span>
+    </td>
+    <td style="width:86px;">&nbsp;</td>
+    <td style="width:auto;">&nbsp;</td>
+  </tr>
+</table>
+
+<br />
+
+<table role="presentation" style="width:100%; margin-left:-22px; table-layout:fixed;">
+  <tr>
+    <td style="width:20%;">&nbsp;</td>
+
+    <td style="vertical-align: bottom; padding-left: 16px;">
+      <div class="date-label" style="margin-bottom: 5px">Wann wurde gekündigt?</div>
+      <table role="presentation" style="width: auto">
+        <tr>
+          {% if metaInfo[0].ResignationDate != "" %}
+            {% for digit in metaInfo[0].ResignationDate %}
+            <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">{{ digit }}</td>
+            <td style="width: 2px"></td>
+            {% endfor %}
+          {% else %}
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
+            <td class="date-spacer">.</td><td style="width: 2px"></td>
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
+            <td class="date-spacer">.</td><td style="width: 2px"></td>
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td>
+          {% endif %}
+        </tr>
+        <tr>
+          <td class="date-subscript">T</td><td></td><td class="date-subscript">T</td><td></td>
+          <td></td><td></td>
+          <td class="date-subscript">M</td><td></td><td class="date-subscript">M</td><td></td>
+          <td></td><td></td>
+          <td class="date-subscript">J</td><td></td><td class="date-subscript">J</td><td></td>
+          <td class="date-subscript">J</td><td></td><td class="date-subscript">J</td>
+        </tr>
+      </table>
+    </td>
+
+    <td style="width:10%;">&nbsp;</td>
+
+    <td style="vertical-align: bottom">
+      <div class="date-label" style="margin-bottom: 5px">Auf welchen Zeitpunkt wurde gekündigt?</div>
+      <table role="presentation" style="width: auto">
+        <tr>
+          {% if metaInfo[0].TerminationDate != "" %}
+            {% for digit in metaInfo[0].TerminationDate %}
+            <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">{{ digit }}</td>
+            <td style="width: 2px"></td>
+            {% endfor %}
+          {% else %}
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
+            <td class="date-spacer">.</td><td style="width: 2px"></td>
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
+            <td class="date-spacer">.</td><td style="width: 2px"></td>
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
+            <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td>
+          {% endif %}
+        </tr>
+        <tr>
+          <td class="date-subscript">T</td><td></td><td class="date-subscript">T</td><td></td>
+          <td></td><td></td>
+          <td class="date-subscript">M</td><td></td><td class="date-subscript">M</td><td></td>
+          <td></td><td></td>
+          <td class="date-subscript">J</td><td></td><td class="date-subscript">J</td><td></td>
+          <td class="date-subscript">J</td><td></td><td class="date-subscript">J</td>
+        </tr>
+      </table>
+    </td>
+
+    <td style="width:86px;">&nbsp;</td>
+    <td style="width:auto;">&nbsp;</td>
+  </tr>
+</table>
+
+    <!-- <br><br>
+    <table role="presentation" style="width: 100%">
+      <tr>
+        <td style="text-align: center">
+          <div style="display: inline-block">
+
+            <div style="font-size: 16px; margin-top: 12px">2/3</div>
+          </div>
+        </td>
+      </tr>
+    </table> -->
+    <!-- <br /> -->
+    <br />
+
+    <!-- Question 11 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          11
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; padding-left: 8px; vertical-align: top">
+                Wurden auf dem Lohn Beiträge <br>
+                an die berufliche Vorsorge (BVG) <br>
+                erhoben?
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: top;
+                    width: 7%;
+                  ">
+                nein
+              </td>
+              <td style="vertical-align: top; width: 2%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: top;
+                    width: 3%;
+                  ">
+                ja
+              </td>
+              <td style="vertical-align: top; width:auto;">
+                <div class="date-label">Name des BVG-Versicherers</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 42px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      width: 100%;
+                      font-size: 14px;
+                    ">
+                  AXA, siehe beil. Lohnabrechnung
+                </div>
+              </td>
+
+
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+
+    <!-- Question 12 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          12
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; padding-left: 8px; vertical-align: top">
+                Wurden Kinder- und/oder Ausbil- <br>
+                dungszulagen ausgerichtet?
+              </td>
+
+              <td style="vertical-align: middle; width: 2%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 3%;
+                  ">
+                ja
+              </td>
+              <td style="width: 52px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width:25%;">
+                <div class="date-label">Anzahl Kinderzulagen</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 42px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                    ">
+                  AXA, siehe beil. Lohnabrechnung
+                </div>
+              </td>
+              <td style="width: 2%;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width:25%;">
+                <div class="date-label">Anzahl Ausbildungszulagen</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 42px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                    ">
+                </div>
+              </td>
+              <td style="width: auto;"></td>
+
+
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; vertical-align: top">
+                &nbsp;
+              </td>
+
+              <td style="vertical-align: middle; width: 2%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 3%;
+                  ">
+                nein
+              </td>
+              <td style="width: 40px;"> &nbsp;</td>
+
+
+
+              <td style="vertical-align: bottom; width:auto;">
+                <div class="date-label">Grund</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 42px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      width: 100%;
+                      font-size: 14px;
+                    ">
+                  siehe beil. Lohnabrechnung
+                </div>
+              </td>
+
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <!-- Question 13 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          13
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 46%; padding-left: 8px; padding-left: 8px; vertical-align: top">
+                Ist/war die versicherte Person oder ihr Ehegatte / ihre Ehegattin / ihr eingetragener Partner / ihre
+                eingetragene <br>
+                Partnerin am Betrieb finanziell beteiligt oder dem obersten betrieblichen Entscheidungsgremium Ihres
+                Betriebs <br>
+                angehörig? <br>
+                (z.B. Aktionär/in, Verwaltungsrat/rätin, Gesellschafter/in, Geschäftsführer/in etc.) <br /><br>
+                <span style="font-size: 18px; font-weight: bold;">Einkommen aus selbständiger Erwerbstätigkeit</span>
+
+
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div">
+                  <span style="color: #000;">●</span>
+                </div>
+              </td>
+              <td style="
+                    vertical-align: top;
+                    width: 4%;
+                  ">
+                nein
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    vertical-align: top;
+                    width: 3%;
+                  ">
+                ja
+              </td>
+
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <!-- Question 14 -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          14
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 20%; padding-left: 8px; vertical-align: top">
+                Wieviel betrug das in diesem <br>
+                Monat erarbeitete Einkommen?
+              </td>
+
+
+              <td style="vertical-align: bottom; width:300px;">
+                <div class="date-label">Bruttoeinkommen</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 42px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                    ">
+                </div>
+              </td>
+              <td style="width: 36px;"> &nbsp;</td>
+
+              <td style="vertical-align: bottom; width:300px;">
+                <div class="date-label">Material-/Warenkosten</div>
+                <div style="
+                      background-color: #dbe4eb;
+                      height: 42px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      font-size: 14px;
+                    ">
+                </div>
+              </td>
+              <td style="width: 36px;"> &nbsp;</td>
+
+              <td style="font-size: 14px; width: 20%; vertical-align: top; padding-top: 16px;">
+                Bitte Bruttoeinkommen sowie <br>
+                Material-/Warenkosten belegen.
+              </td>
+
+              <td style="width: auto;"></td>
+
+
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <br />
+    <!-- Question 14 bottom -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          &nbsp;
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top">
+                Als anrechenbarer Zwischenverdienst gilt das Bruttoeinkommen minus die Material-/Warenkosten minus 20%
+                als Pauschalabzug.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!-- Question 14 bottom -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          &nbsp;
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px;">
+                Hinweise
+              </td>
+            </tr>
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+                Bitte beantworten Sie sämtliche Fragen und legen die notwendigen Belege als Kopien bei. Unbeantwortete
+                Fragen und unvollständige Beilagen erfordern
+              </td>
+            </tr>
+            <br>
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+                zusätzliche Abklärungen und können die Auszahlung der Arbeitslosenentschädigung verzögern.
+              </td>
+            </tr>
+            <br>
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+                Der Arbeitgeber ist zu wahrheitsgetreuer Auskunft verpflichtet und hat gegenüber Dritten Schweigen zu
+                bewahren (Art. 88 AVIG und Art. 28 ATSG).
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <!-- Question 14 bottom -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          &nbsp;
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px;">
+                Bestätigung des Arbeitgebers / der selbständigerwerbenden Person
+              </td>
+            </tr>
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+                Ich bestätige, alle Fragen wahrheitsgetreu und vollständig beantwortet zu haben. Ich nehme zur Kenntnis,
+                dass ich mich gemäss Art. 105/106 AVIG durch </td>
+            </tr>
+            <br>
+            <br>
+            <tr>
+              <td style="font-size: 14px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+                unwahre Angaben oder Verschweigen von Tatsachen strafbar mache, falls dies zu einer ungerechtfertigten
+                Auszahlung von Leistungen führen könnte. </td>
+            </tr>
+            <br>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br />
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          &nbsp;
+        </td>
+        <td style="vertical-align: bottom; width:480px;">
+          <div class="date-label">Ort</div>
+          <div style="
+                      background-color: #dbe4eb;
+                      height: 46px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      width: 480px;
+                      font-size: 14px;
+                    ">
+            {{metaInfo[0].MainEmploymentLocation}}
+          </div>
+        </td>
+        <td style="width: 66px"></td>
+
+        <td style="vertical-align: bottom; padding-top: 12px;">
+          <div class="date-label" style="margin-bottom: 5px">
+            von
+          </div>
+          <table role="presentation" style="width: auto">
+            <tr>
+              {% for digit in metaInfo[0].GenerationDate %}
+
+              <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}"> {{ digit }}</td>
+              <td style="width: 2px"></td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <!-- Subscripts T T M M J J J J -->
+              <td class="date-subscript">T</td>
+              <td></td>
+              <td class="date-subscript">T</td>
+              <td></td>
+              <td class="date-subscript"></td>
+              <td></td>
+
+              <td class="date-subscript">M</td>
+              <td></td>
+              <td class="date-subscript">M</td>
+              <td></td>
+              <td class="date-subscript"></td>
+              <td></td>
+
+              <td class="date-subscript">J</td>
+              <td></td>
+              <td class="date-subscript">J</td>
+              <td></td>
+              <td class="date-subscript">J</td>
+              <td></td>
+              <td class="date-subscript">J</td>
+            </tr>
+          </table>
+
+        </td>
+        <td style="width: auto;"></td>
+      </tr>
+    </table>
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+              font-weight: bold;
+              font-size: 14px;
+            ">
+          &nbsp;
+        </td>
+        <td style="vertical-align: bottom; width:480px;">
+          <div class="date-label">Unterschrift</div>
+          <div style="
+                      background-color: #dbe4eb;
+                      height: 46px;
+                      line-height: 28px;
+                      padding: 2px 5px;
+                      width: 480px;
+                      font-size: 14px;
+                    ">
+
+          </div>
+        </td>
+        <td style="width: 66px"></td>
+
+        <td style="vertical-align: bottom; padding-top: 12px;">
+
+
+        </td>
+        <td style="width: auto;"></td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- Beilagen in Kopie -->
+    <table role="presentation" style="width: 100%; margin-left: -22px">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 14%;  vertical-align: top">
+                Beilagen in Kopie
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 40%;
+                  ">
+                Vollmacht für unterzeichnende Drittperson
+              </td>
+              <td style="width: auto"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table role="presentation" style="width: 100%; margin-left: -22px;">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 14%;  vertical-align: top">
+                &nbsp;
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 40%;
+                  ">
+                Arbeitsvertrag / Einsatzverträge für Temporäranstellungen (Frage 2)
+              </td>
+              <td style="width: auto"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table role="presentation" style="width: 100%; margin-left: -22px;">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 14%;  vertical-align: top">
+                &nbsp;
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div" style="padding:0px; font-size: 20px;">√</div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 40%;
+                  ">
+                Lohnabrechnung(en) für die Arbeitsstunden dieses Monats
+              </td>
+              <td style="width: auto"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table role="presentation" style="width: 100%; margin-left: -22px;">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 14%;  vertical-align: top">
+                &nbsp;
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 40%;
+                  ">
+                Stundennachweise
+              </td>
+              <td style="width: auto"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table role="presentation" style="width: 100%; margin-left: -22px;">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 14%;  vertical-align: top">
+                &nbsp;
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 40%;
+                  ">
+                Kündigungsschreiben / Aufhebungsvereinbarung (Frage 10)
+              </td>
+              <td style="width: auto"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <table role="presentation" style="width: 100%; margin-left: -22px;">
+      <tr>
+        <td style="
+              vertical-align: top;
+              width: 20px;
+            ">
+        </td>
+        <td>
+          <table role="presentation" style="width: 100%">
+            <tr>
+              <td style="font-size: 14px; width: 14%;  vertical-align: top">
+                &nbsp;
+              </td>
+              <td style="vertical-align: top; width: 3%">
+                <div class="rectangle-box-div"></div>
+              </td>
+              <td style="
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    vertical-align: middle;
+                    width: 40%;
+                  ">
+                Belege über Bruttoeinkommen sowie Material-/Warenkosten (Frage 14)
+              </td>
+              <td style="width: auto"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+<!-- 
+    <h2>    ResignationDate :{{metaInfo[0].ResignationDate}}</h2>
+    <h2>    TerminationDate :{{metaInfo[0].TerminationDate}}</h2>
+    <h2>    TerminationBy{{metaInfo[0].TerminationBy}}</h2> -->
+
+    <br>
+    <br>
+  </div>
+</body>
+
+</html>
