@@ -84,16 +84,20 @@
     }
 
     .rectangle-box-div {
-      background-color: #dbe4eb;
+      background-color: #ffffff;
       width: 25px;
-      padding-top: 2px;
-      box-sizing: border-box;
       height: 25px;
-      text-align: center;
-      vertical-align: middle;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: black;
       border: 1.5px solid rgb(0, 0, 0);
-      ;
+    }
+    .rectangle-box-div span {
+      font-size: 28px;
+      line-height: 1;
+      display: block;
     }
 
     .custom-checkbox {
@@ -177,7 +181,7 @@
 
     .corner-bl {
       position: absolute;
-      bottom: -210px;
+      bottom: -190px;
       left: 4px;
       width: 25px;
       height: 25px;
@@ -187,7 +191,7 @@
 
     .corner-br {
       position: absolute;
-      bottom: -210px;
+      bottom: -190px;
       right: 4px;
       width: 25px;
       height: 25px;
@@ -440,7 +444,7 @@
     </table>
 
     <!-- Employer Info Section -->
-    <table role="presentation" style="width: 100%; margin-top: 8px">
+    <table role="presentation" style="width: 100%; margin-top: 20px">
       <!-- Activity Row -->
       <tr>
         <td>
@@ -470,7 +474,7 @@
       <!-- Employer Name Row -->
       <tr>
         <td>
-          <div class="date-label" style="margin-top: 16px">
+          <div class="date-label" style="margin-top: 20px">
             Name des Arbeitgebers
           </div>
           <div class="font-size-25 box-content" style="padding: 5px; font-size: 16px; min-height: 20px">
@@ -601,8 +605,10 @@
           <table role="presentation" style="width: 100%">
             <tr>
               <!-- Checkbox 1: der Firma -->
-              <td class="rectangle-box" style="width: 20px; font-size: 16px; line-height: 1">
-                <div class="rectangle-box-div" style="color: #000;">●</div>
+              <td style="width: 25px; vertical-align: middle;">
+                <div class="rectangle-box-div" >
+                  <span style="color: #000;">●</span>
+                </div>
               </td>
 
               <td style="
@@ -614,8 +620,8 @@
               </td>
 
               <!-- Checkbox 2: Drittperson -->
-              <td class="rectangle-box" style="width: 20px">
-                <div class="rectangle-box-div"></div>
+              <td style="width: 25px; vertical-align: middle;">
+                <div class="rectangle-box-div" ></div>
               </td>
               <td style="padding-left: 10px; vertical-align: middle">
                 Drittperson.
@@ -679,7 +685,7 @@
 
     <br />
     <!-- Question 1: Hours Grid -->
-    <table role="presentation" style="width: 100%; margin-left: -16px">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 20px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -828,7 +834,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; vertical-align: top">
                 Wurde ein schriftlicher Arbeitsvertrag unterzeichnet?
               </td>
 
@@ -894,7 +900,7 @@
           <table role="presentation" style="width: 100%">
 
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: middle">
+              <td style="font-size: 10px; width: 25%; vertical-align: middle">
                 Wurde mit dem/der Arbeitnehmenden eine wöchentliche
                 Arbeitszeit vereinbart?
               </td>
@@ -952,7 +958,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; vertical-align: top">
                 Wie viel beträgt die wöchentliche Normalarbeitszeit im
                 Betrieb?
               </td>
@@ -986,18 +992,17 @@
     <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
-              vertical-align: top;
+              vertical-align: middle;
               width: 20px;
               font-weight: bold;
               font-size: 12px;
-              padding-top: 16px;
             ">
           5
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: middle">
+              <td style="font-size: 10px; width: 25%; vertical-align: middle">
                 Unterliegt das Arbeitsverhältnis einem Gesamtarbeitsvertrag?
               </td>
               <td style="vertical-align: middle; width: 3%">
@@ -1079,7 +1084,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; vertical-align: top">
                 Haben Sie in diesem Monat <br />mehr Arbeit angeboten?
               </td>
               <td style="vertical-align: middle; width: 3%">
@@ -1172,7 +1177,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; vertical-align: top">
                 Falls der/die Arbeitnehmende das Arbeitsangebot abgelehnt hat, für welchen Zeitraum wurde ein höheres
                 Pensum angeboten und mit welcher Begründung wurde dies abgelehnt?
               </td>
@@ -1262,7 +1267,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; vertical-align: top">
                 <b>Bei Monatslohn</b> <br /> <span>AHV-pflichtiger Bruttolohn in CHF</span>
               </td>
 
@@ -1326,7 +1331,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; vertical-align: top">
                 <b>Bei Stundenlohn</b> <br /> <span>AHV-pflichtiger Stundenlohn</span> <br> <span>pro Stunde in
                   CHF</span>
               </td>
@@ -2310,7 +2315,7 @@
     <td>
       <table role="presentation" style="width: 100%">
         <tr>
-          <td style="font-size: 10px; width: 20%; vertical-align: top">&nbsp; </td>
+          <td style="font-size: 10px; width: 25%; vertical-align: top">&nbsp; </td>
           <td style="vertical-align: middle; width: 36px">
             <div class="rectangle-box-div">
               {% if metaInfo[0].TerminationDate == "" %}<span style="color: #000;">●</span>{% endif %}
@@ -2512,7 +2517,7 @@
           <td>
             <table role="presentation" style="width: 100%">
               <tr>
-                <td style="font-size: 10px; width: 20%; vertical-align: top; padding-left: 8px;">
+                <td style="font-size: 10px; width: 25%; vertical-align: top; padding-left: 8px;">
                   Was war der Grund der Vertragsauflösung?
                 </td>
                 <td>
@@ -2547,7 +2552,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; padding-left: 8px; vertical-align: top">
                 Wurden auf dem Lohn Beiträge <br>
                 an die berufliche Vorsorge (BVG) <br>
                 erhoben?
@@ -2610,7 +2615,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; padding-left: 8px; vertical-align: top">
                 Wurden Kinder- und/oder Ausbil- <br>
                 dungszulagen ausgerichtet?
               </td>
@@ -2675,7 +2680,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; vertical-align: top">
                 &nbsp;
               </td>
 
@@ -2780,7 +2785,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 20%; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 10px; width: 25%; padding-left: 8px; vertical-align: top">
                 Wieviel betrug das in diesem <br>
                 Monat erarbeitete Einkommen?
               </td>
@@ -2812,7 +2817,7 @@
               </td>
               <td style="width: 36px;"> &nbsp;</td>
 
-              <td style="font-size: 10px; width: 20%; vertical-align: top; padding-top: 16px;">
+              <td style="font-size: 10px; width: 25%; vertical-align: top; padding-top: 16px;">
                 Bitte Bruttoeinkommen sowie <br>
                 Material-/Warenkosten belegen.
               </td>
