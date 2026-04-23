@@ -135,7 +135,7 @@
     }
 
     .date-spacer {
-      width: 4px;
+      padding: 0px !important;
       text-align: center;
       vertical-align: middle;
       font-weight: bold;
@@ -260,14 +260,14 @@
                 {% for digit in month %}
 
                 <td class="date-box">{{digit}}</td>
-                <td style="width: 2px"></td>
+                <!-- <td style="width: 2px"></td> -->
                 {% endfor %}
 
                 <td class="date-spacer">.</td>
                 {% for year in metaInfo[0].TargetYear %}
 
                 <td class="date-box">{{year}}</td>
-                <td style="width: 2px"></td>
+                <!-- <td style="width: 2px"></td> -->
                 {% endfor %}
 
               </tr>
@@ -484,7 +484,8 @@
             <tr>
               {% for digit in metaInfo[0].BurNr %}
               <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">{{digit}}</td>
-              <td style="width: 2px"></td>
+                                  <td class="{% if digit == '.' %}width-0{% else %}width-2{% endif %}"></td>
+
 
               {% endfor %}
             </tr>
@@ -510,7 +511,8 @@
               <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">
                 {{ digit }}
               </td>
-              <td style="width: 2px"></td>
+                                  <td class="{% if digit == '.' %}width-0{% else %}width-2{% endif %}"></td>
+
               {% endfor %}
 
 
@@ -2413,7 +2415,8 @@
           {% if metaInfo[0].ResignationDate != "" %}
             {% for digit in metaInfo[0].ResignationDate %}
             <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">{{ digit }}</td>
-            <td style="width: 2px"></td>
+                                <td class="{% if digit == '.' %}width-0{% else %}width-2{% endif %}"></td>
+
             {% endfor %}
           {% else %}
             <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
@@ -2444,7 +2447,8 @@
           {% if metaInfo[0].TerminationDate != "" %}
             {% for digit in metaInfo[0].TerminationDate %}
             <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}">{{ digit }}</td>
-            <td style="width: 2px"></td>
+                                <td class="{% if digit == '.' %}width-0{% else %}width-2{% endif %}"></td>
+
             {% endfor %}
           {% else %}
             <td class="date-box"></td><td style="width: 2px"></td><td class="date-box"></td><td style="width: 2px"></td>
@@ -2913,7 +2917,8 @@
               {% for digit in metaInfo[0].GenerationDate %}
 
               <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}"> {{ digit }}</td>
-              <td style="width: 2px"></td>
+                                  <td class="{% if digit == '.' %}width-0{% else %}width-2{% endif %}"></td>
+
               {% endfor %}
             </tr>
             <tr>
