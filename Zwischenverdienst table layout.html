@@ -88,16 +88,20 @@
       width: 25px;
       height: 25px;
       box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: black;
+      position: relative;
       border: 1.5px solid rgb(0, 0, 0);
     }
     .rectangle-box-div span {
-      font-size: 28px;
-      line-height: 1;
       display: block;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background-color: #000000;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -6px;
+      margin-left: -6px;
     }
 
     .custom-checkbox {
@@ -607,7 +611,7 @@
               <!-- Checkbox 1: der Firma -->
               <td style="width: 25px; vertical-align: middle;">
                 <div class="rectangle-box-div" >
-                  <span style="color: #000;">●</span>
+                  <span></span>
                 </div>
               </td>
 
@@ -866,7 +870,7 @@
                   >
                 </td> -->
               <td class="rectangle-box" style="width: 20px; font-size: 16px; line-height: 1">
-                <div class="rectangle-box-div"><span style="color: #000;">●</span></div>
+                <div class="rectangle-box-div"><span></span></div>
               </td>
               <td style="
                     padding-left: 6px;
@@ -906,7 +910,7 @@
               </td>
               <td style="vertical-align: middle; width: 3%">
                 <div class="rectangle-box-div">
-                  <span style="color: #000;">●</span>
+                  <span></span>
                 </div>
               </td>
               <td style="
@@ -1018,7 +1022,7 @@
               </td>
               <td style="vertical-align: middle; width: 2%">
                 <div class="rectangle-box-div">
-                  <span style="color: #000;">●</span>
+                  <span></span>
 
                 </div>
               </td>
@@ -1089,7 +1093,7 @@
               </td>
               <td style="vertical-align: middle; width: 3%">
                 <div class="rectangle-box-div">
-                  <span style="color: #000;">●</span>
+                  <span></span>
 
                 </div>
               </td>
@@ -2318,7 +2322,7 @@
           <td style="font-size: 10px; width: 25%; vertical-align: top">&nbsp; </td>
           <td style="vertical-align: middle; width: 36px">
             <div class="rectangle-box-div">
-              {% if metaInfo[0].TerminationDate == "" %}<span style="color: #000;">●</span>{% endif %}
+              {% if metaInfo[0].TerminationDate == "" %}<span></span>{% endif %}
             </div>
           </td>
           <td style="padding-left: 10px; padding-right: 10px; vertical-align: middle; width: 10%;">
@@ -2341,7 +2345,7 @@
         <tr>
           <td style="width:36px; padding-left: 16px; padding-right: 10px; vertical-align:middle;">
             <div class="rectangle-box-div">
-              {% if metaInfo[0].TerminationDate != "" %}<span style="color: #000;">●</span>{% endif %}
+              {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
             </div>
           </td>
           <td style="vertical-align:middle;">nein. Wer hat gekündigt?</td>
@@ -2354,7 +2358,7 @@
         <tr>
           <td style="width:36px; vertical-align:middle;">
             <div class="rectangle-box-div">
-              {% if metaInfo[0].TerminationBy == "Employer" %}<span style="color: #000;">●</span>{% endif %}
+              {% if metaInfo[0].TerminationBy == "Employer" %}<span></span>{% endif %}
             </div>
           </td>
           <td style="padding:0 10px; vertical-align:middle;">Arbeitgeber</td>
@@ -2390,7 +2394,7 @@
         <tr>
           <td style="width:36px; vertical-align:middle;">
             <div class="rectangle-box-div">
-              {% if metaInfo[0].TerminationBy == "Employee" %}<span style="color: #000;">●</span>{% endif %}
+              {% if metaInfo[0].TerminationBy == "Employee" %}<span></span>{% endif %}
             </div>
           </td>
           <td style="padding:0 10px; vertical-align:middle;">Arbeitnehmende/r</td>
@@ -2404,7 +2408,7 @@
         <tr>
           <td style="width:36px; vertical-align:middle;">
             <div class="rectangle-box-div">
-              {% if metaInfo[0].TerminationDate != "" %}<span style="color: #000;">●</span>{% endif %}
+              {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
             </div>
           </td>
           <td style="padding:0 10px; vertical-align:middle;">schriftlich</td>
@@ -2746,7 +2750,7 @@
               </td>
               <td style="vertical-align: top; width: 3%">
                 <div class="rectangle-box-div">
-                  <span style="color: #000;">●</span>
+                  <span></span>
                 </div>
               </td>
               <td style="
