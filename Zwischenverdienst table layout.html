@@ -13,7 +13,7 @@
     }
 
     .body-container {
-      padding: 0 35px;
+      padding: 0  48px;
       margin: 0;
 
     }
@@ -217,6 +217,13 @@
     td[style*="background-color: #dbe4eb"] {
       font-size: 19px !important;
     }
+
+    .page-side-label {
+      position: absolute;
+      left: -44px;
+      top: 0;
+      overflow: visible;
+    }
   </style>
 </head>
 
@@ -260,14 +267,14 @@
                 {% for digit in month %}
 
                 <td class="date-box">{{digit}}</td>
-                <!-- <td style="width: 2px"></td> -->
+                <td style="width: 2px"></td>
                 {% endfor %}
 
                 <td class="date-spacer">.</td>
                 {% for year in metaInfo[0].TargetYear %}
 
                 <td class="date-box">{{year}}</td>
-                <!-- <td style="width: 2px"></td> -->
+                <td style="width: 2px"></td>
                 {% endfor %}
 
               </tr>
@@ -672,7 +679,7 @@
 
     <br />
     <!-- Question 1: Hours Grid -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -808,7 +815,7 @@
 
 
     <!-- Question 2 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -873,7 +880,7 @@
     <br />
 
     <!-- Question 3 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: middle;
@@ -932,7 +939,7 @@
     </table>
     <br />
     <!-- Question 4 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -972,14 +979,18 @@
     </table>
 
     <!-- Question 5 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <div style="position: relative;">
+      <svg class="page-side-label" xmlns="http://www.w3.org/2000/svg" width="12" height="80" overflow="visible">
+        <text x="0" y="0" transform="translate(8,75) rotate(-90)" font-size="7" font-family="ArialMT,Arial,sans-serif" fill="#333333" letter-spacing="0.5">10018d - 02-2025</text>
+      </svg>
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
               width: 20px;
               font-weight: bold;
               font-size: 12px;
-  padding-top: 16px;
+              padding-top: 16px;
             ">
           5
         </td>
@@ -1038,6 +1049,7 @@
         </td>
       </tr>
     </table>
+    </div><!-- end Q5 relative wrapper -->
     <br />
 
     <table role="presentation" style="width: 100%">
@@ -1054,7 +1066,7 @@
 
     <br />
     <!-- Question 6 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -1147,7 +1159,7 @@
     <br />
 
     <!-- Question 7 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -1185,7 +1197,7 @@
       </tr>
     </table>
     <br>
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -1214,7 +1226,7 @@
     </table>
     <br />
     <!-- Question 8 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -1238,7 +1250,7 @@
 
 
 
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -1302,7 +1314,7 @@
       </tr>
     </table>
     <br />
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -1397,7 +1409,7 @@
     <br>
     <!-- Question 9 -->
 
-    <table role="presentation" style="width: 100%; margin-left: -22px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
         vertical-align: top;
@@ -2185,7 +2197,7 @@
     <br />
     <!-- Question 10 -->
 
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2292,7 +2304,7 @@
     </table>
 
     <!-- Question 10 second section -->
-<table role="presentation" style="width: 100%; margin-left: -22px">
+<table role="presentation" style="width: 100%; margin-left: -16px">
   <tr>
     <td style="vertical-align: top; width: 20px; font-weight: bold; font-size: 12px;">&nbsp;</td>
     <td>
@@ -2489,8 +2501,40 @@
     <!-- <br /> -->
     <br />
 
+    <!-- Question 10 - Was war der Grund -->
+    <div style="position: relative;">
+      <svg class="page-side-label" xmlns="http://www.w3.org/2000/svg" width="12" height="80" overflow="visible">
+        <text x="0" y="0" transform="translate(8,75) rotate(-90)" font-size="7" font-family="ArialMT,Arial,sans-serif" fill="#333333" letter-spacing="0.5">10018d - 02-2025</text>
+      </svg>
+      <table role="presentation" style="width: 100%; margin-left: -16px">
+        <tr>
+          <td style="vertical-align: top; width: 20px; font-size: 12px;">&nbsp;</td>
+          <td>
+            <table role="presentation" style="width: 100%">
+              <tr>
+                <td style="font-size: 10px; width: 20%; vertical-align: top; padding-left: 8px;">
+                  Was war der Grund der Vertragsauflösung?
+                </td>
+                <td>
+                  <div style="
+                    background-color: #dbe4eb;
+                    height: 50px;
+                    width: 100%;
+                    padding: 2px 5px;
+                    box-sizing: border-box;
+                  "></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <br />
+
     <!-- Question 11 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2553,7 +2597,7 @@
     <br />
 
     <!-- Question 12 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2618,7 +2662,7 @@
       </tr>
     </table>
     <br />
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2671,7 +2715,7 @@
     </table>
     <br />
     <!-- Question 13 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2723,7 +2767,7 @@
     </table>
     <br />
     <!-- Question 14 -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2784,7 +2828,7 @@
     <br />
     <br />
     <!-- Question 14 bottom -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2807,7 +2851,7 @@
       </tr>
     </table>
     <!-- Question 14 bottom -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2848,7 +2892,7 @@
       </tr>
     </table>
     <!-- Question 14 bottom -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2883,7 +2927,7 @@
       </tr>
     </table>
     <br />
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2951,7 +2995,7 @@
         <td style="width: auto;"></td>
       </tr>
     </table>
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -2986,7 +3030,7 @@
     <br>
 
     <!-- Beilagen in Kopie -->
-    <table role="presentation" style="width: 100%; margin-left: -22px">
+    <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
         <td style="
               vertical-align: top;
@@ -3017,7 +3061,7 @@
       </tr>
     </table>
     <br>
-    <table role="presentation" style="width: 100%; margin-left: -22px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -3048,7 +3092,7 @@
       </tr>
     </table>
     <br>
-    <table role="presentation" style="width: 100%; margin-left: -22px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -3079,7 +3123,7 @@
       </tr>
     </table>
     <br>
-    <table role="presentation" style="width: 100%; margin-left: -22px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -3110,7 +3154,7 @@
       </tr>
     </table>
     <br>
-    <table role="presentation" style="width: 100%; margin-left: -22px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -3141,7 +3185,7 @@
       </tr>
     </table>
     <br>
-    <table role="presentation" style="width: 100%; margin-left: -22px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
               vertical-align: top;
