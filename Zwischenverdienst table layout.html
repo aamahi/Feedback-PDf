@@ -135,13 +135,17 @@
     }
 
     .date-spacer {
-      width: 10px;
+      width: 4px;
       text-align: center;
-      vertical-align: bottom;
+      vertical-align: middle;
       font-weight: bold;
-      font-size: 18px;
-      padding-bottom: 5px;
       background-color: transparent;
+    }
+    .width-2 {
+      width: 2px;
+    }
+    .width-0 {
+      width: 0px;
     }
 
     .date-subscript {
@@ -388,34 +392,31 @@
                     {% for digit in metaInfo[0].DateOfBirth %}
 
                     <td class="{% if digit == '.' %}date-spacer{% else %}date-box{% endif %}"> {{ digit }}</td>
-                    <td style="width: 2px"></td>
+                    <td class="{% if digit == '.' %}width-0{% else %}width-2{% endif %}"></td>
                     {% endfor %}
                   </tr>
                   <tr>
-                    <!-- Subscripts T T M M J J J J -->
+                    <!-- Subscripts T T . M M . J J J J (with gap tds matching digit row) -->
                     <td class="date-subscript">T</td>
                     <td></td>
                     <td class="date-subscript">T</td>
                     <td></td>
-                    <td class="date-subscript"></td>
                     <td></td>
-
-                    <td class="date-subscript">M</td>
                     <td></td>
                     <td class="date-subscript">M</td>
-
                     <td></td>
-                    <td class="date-subscript"></td>
-
+                    <td class="date-subscript">M</td>
                     <td></td>
-
-                    <td class="date-subscript">J</td>
+                    <td></td>
                     <td></td>
                     <td class="date-subscript">J</td>
                     <td></td>
                     <td class="date-subscript">J</td>
                     <td></td>
                     <td class="date-subscript">J</td>
+                    <td></td>
+                    <td class="date-subscript">J</td>
+                    <td></td>
                   </tr>
                 </table>
               </td>
@@ -549,7 +550,7 @@
               <td style="width: 2px"></td>
               <td class="date-box" style="width: 20px"></td>
 
-              <td class="date-spacer" style="padding-left: 5px; padding-right: 5px">
+              <td class="date-spacer">
                 .
               </td>
 
@@ -562,7 +563,7 @@
               <td style="width: 2px"></td>
               <td class="date-box" style="width: 20px"></td>
 
-              <td class="date-spacer" style="padding-left: 5px; padding-right: 5px">
+              <td class="date-spacer">
                 .
               </td>
 
