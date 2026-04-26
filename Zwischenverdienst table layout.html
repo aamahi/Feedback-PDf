@@ -1579,7 +1579,10 @@
         <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
           Taggeldleistungen
         </td>
-        <td>&nbsp;</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
+        </td>
         <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 10px;">=</td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
@@ -1596,7 +1599,10 @@
         <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
           Andere Lohnbestandteile
         </td>
-        <td>&nbsp;</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
+        </td>
         <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 10px;">=</td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
@@ -1717,13 +1723,14 @@
     <!-- Question 10 -->
     <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
-        <td style="vertical-align: top; width: 20px; font-weight: bold; font-size: 12px; padding-top: 4px;">10</td>
+        <td style="vertical-align: top; width: 20px; font-weight: bold; font-size: 12px;">10</td>
         <td style="font-size: 10px; width: 25%; vertical-align: top;">
           Wird das Arbeitsverhältnis weitergeführt?
         </td>
         <td>
-          <!-- Row 1: befristet bis + date boxes -->
-          <table role="presentation" style="width: 100%; margin-bottom: 5px;">
+          <!-- Rows 1-4: unified table so date boxes and Arbeitgeber align -->
+          <table role="presentation" style="width: 100%; margin-bottom: 4px;">
+            <!-- Row 1: befristet bis + date boxes -->
             <tr>
               <td style="width: 25px; vertical-align: middle;"><div class="rectangle-box-div"></div></td>
               <td style="padding-left: 10px; padding-right: 10px; vertical-align: middle; white-space: nowrap; font-size: 10px;">befristet bis</td>
@@ -1751,58 +1758,67 @@
               </td>
               <td style="width: auto;">&nbsp;</td>
             </tr>
-          </table>
-          <!-- Row 2: ja, unbefristet -->
-          <table role="presentation" style="width: 100%; margin-bottom: 5px;">
+            <!-- Row 2: ja, unbefristet -->
             <tr>
-              <td style="width: 25px; vertical-align: middle;">
+              <td style="width: 25px; vertical-align: middle; padding-top: 5px;">
                 <div class="rectangle-box-div">
                   {% if metaInfo[0].TerminationDate == "" %}<span></span>{% endif %}
                 </div>
               </td>
-              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px;">ja, unbefristet</td>
+              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; padding-top: 5px;">ja, unbefristet</td>
+              <td></td>
+              <td></td>
             </tr>
-          </table>
-          <!-- Row 3: nein + Arbeitgeber + mündlich -->
-          <table role="presentation" style="width: 100%; margin-bottom: 4px;">
+            <!-- Row 3: nein -->
             <tr>
-              <td style="width: 25px; vertical-align: middle;">
+              <td style="width: 25px; vertical-align: middle; padding-top: 5px;">
                 <div class="rectangle-box-div">
                   {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
                 </div>
               </td>
-              <td style="padding-left: 10px; padding-right: 10px; vertical-align: middle; font-size: 10px; white-space: nowrap;">nein. Wer hat gekündigt?</td>
-              <td style="width: 25px; vertical-align: middle;">
-                <div class="rectangle-box-div">
-                  {% if metaInfo[0].TerminationBy == "Employer" %}<span></span>{% endif %}
-                </div>
-              </td>
-              <td style="padding-left: 10px; padding-right: 20px; vertical-align: middle; font-size: 10px;">Arbeitgeber</td>
-              <td style="width: 25px; vertical-align: middle;"><div class="rectangle-box-div"></div></td>
-              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px;">mündlich</td>
-              <td style="width: auto;">&nbsp;</td>
+              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; white-space: nowrap; padding-top: 5px;">nein. Wer hat gekündigt?</td>
+              <td></td>
+              <td></td>
             </tr>
-            <!-- Row 4: same table — columns align with row 3 -->
+            <!-- Rows 4+5: Arbeitgeber/Arbeitnehmende + mündlich/schriftlich in one nested table -->
             <tr>
-              <td style="width: 25px;">&nbsp;</td>
-              <td style="padding-left: 10px; padding-right: 10px; white-space: nowrap; font-size: 10px;">&nbsp;</td>
-              <td style="width: 25px; vertical-align: middle; padding-top: 4px;">
-                <div class="rectangle-box-div">
-                  {% if metaInfo[0].TerminationBy == "Employee" %}<span></span>{% endif %}
-                </div>
+              <td style="width: 25px; padding-top: 4px;">&nbsp;</td>
+              <td style="padding-top: 4px;">&nbsp;</td>
+              <td style="vertical-align: middle; padding-top: 4px;">
+                <table role="presentation" style="width: auto;">
+                  <tr>
+                    <td style="width: 25px; vertical-align: middle;">
+                      <div class="rectangle-box-div">
+                        {% if metaInfo[0].TerminationBy == "Employer" %}<span></span>{% endif %}
+                      </div>
+                    </td>
+                    <td style="padding-left: 10px; padding-right: 40px; vertical-align: middle; font-size: 10px;">Arbeitgeber</td>
+                    <td style="width: 25px; vertical-align: middle;"><div class="rectangle-box-div"></div></td>
+                    <td style="padding-left: 10px; vertical-align: middle; font-size: 10px;">mündlich</td>
+                    <td style="width: auto;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td style="width: 25px; vertical-align: middle; padding-top: 4px;">
+                      <div class="rectangle-box-div">
+                        {% if metaInfo[0].TerminationBy == "Employee" %}<span></span>{% endif %}
+                      </div>
+                    </td>
+                    <td style="padding-left: 10px; padding-right: 40px; vertical-align: middle; font-size: 10px; padding-top: 4px;">Arbeitnehmende/r</td>
+                    <td style="width: 25px; vertical-align: middle; padding-top: 4px;">
+                      <div class="rectangle-box-div">
+                        {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
+                      </div>
+                    </td>
+                    <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; padding-top: 4px;">schriftlich</td>
+                    <td style="padding-left: 10px; vertical-align: middle; font-size: 9px; padding-top: 4px;"><span style="font-style: italic;">Bitte Kopie der<br>Kündigung beilegen.</span></td>
+                  </tr>
+                </table>
               </td>
-              <td style="padding-left: 10px; padding-right: 20px; vertical-align: middle; font-size: 10px; padding-top: 4px;">Arbeitnehmende/r</td>
-              <td style="width: 25px; vertical-align: middle; padding-top: 4px;">
-                <div class="rectangle-box-div">
-                  {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
-                </div>
-              </td>
-              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; padding-top: 4px;">schriftlich</td>
-              <td style="padding-left: 6px; vertical-align: middle; font-size: 9px; padding-top: 4px;"><span style="font-style: italic;">Bitte Kopie der<br>Kündigung beilegen.</span></td>
+              <td></td>
             </tr>
           </table>
           <!-- Row 5: Wann + Auf welchen date rows -->
-          <table role="presentation" style="width: 100%;">
+          <table role="presentation" style="width: 100%; padding-top: 8px;">
             <tr>
               <td style="vertical-align: bottom; padding-right: 20px;">
                 <div class="date-label" style="margin-bottom: 5px">Wann wurde gekündigt?</div>
@@ -1968,7 +1984,6 @@
         </td>
       </tr>
     </table>
-    <br />
 
     <!-- Question 12 -->
     <table role="presentation" style="width: 100%; margin-left: -16px">
