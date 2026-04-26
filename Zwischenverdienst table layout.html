@@ -1475,736 +1475,233 @@
     </table>
     <br />
 
-    <!-- Question 9 calculation -->
-    <table role="presentation" style="width: 100%;">
+    <!-- Question 9 calculation - unified table -->
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: top;
-        padding-top: 12px;
-      ">
+        <td style="width: 20px; vertical-align: top;"></td>
+        <td>
+    <table role="presentation" style="width: 100%;">
+
+      <!-- Row: Anzahl geleistete Stunden -->
+      <tr>
+        <td style="font-size: 10px; width: 25%; vertical-align: top; padding-top: 12px;">
           Anzahl geleistete Stunden
         </td>
-
-        <td style="vertical-align: top;">
-        <td style="vertical-align: bottom">
+        <td style="vertical-align: bottom; width: 185px;">
           <div class="date-label">Anzahl Std.</div>
-          <div style="
-                      background-color: #dbe4eb;
-                      height: 42px;
-                      line-height: 42px;
-                      padding: 2px 5px;
-                      width: 180px;
-                      font-size: 14px;
-                    ">
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">
             {{metaInfo[0].TotalHour}}
-
           </div>
         </td>
-        </td>
+        <td style="width: 40px;">&nbsp;</td>
+        <td style="width: 185px;">&nbsp;</td>
+        <td style="width: auto;">&nbsp;</td>
       </tr>
-    </table>
 
-    <!-- Question 9 calculation -->
-    <table role="presentation" style="width: 100%;">
+      <!-- Row: Grundlohn -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: top;
-        padding-top: 12px;
-      ">
+        <td style="font-size: 10px; vertical-align: top; padding-top: 8px;">
           Grundlohn
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 200px;">
-          &nbsp;
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">CHF</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-
-        <!-- 20px gap -->
-        <td style="width: 40px;">&nbsp;</td>
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation">
-            <tr>
-              <td style="font-size: 9px; padding-bottom: 4px;">
-                CHF
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              line-height: 42px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-
-              </td>
-            </tr>
-          </table>
-        </td>
-
-        <!-- Remaining space -->
-        <td style="width: auto;">&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
-    </table>
 
-    <!-- Question 9 calculation -->
-    <table role="presentation" style="width: 100%;">
+      <!-- Row: *Feiertagsentschädigung -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: middle;
-        text-align: left;
-      ">
+        <td style="font-size: 10px; vertical-align: middle;">
           *Feiertagsentschädigung
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 200px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: start;">
-                %
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">%</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-
-        <!-- 20px gap with = sign -->
-        <td style="
-    width: 40px;
-    padding-top: 20px;
-    text-align: center;       /* horizontally center */
-    vertical-align: middle;
-    font-size: 10px;
-  ">
-          =
+        <td style="text-align: center; vertical-align: middle; font-size: 10px;">=</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 180px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: center;">
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              vertical-align: middle;
-              font-size: 14px;
-            ">
-              </td>
-            </tr>
-          </table>
-        </td>
-
-        <!-- Remaining space -->
-        <td style="width: auto;">&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
-    </table>
-    <table role="presentation" style="width: 100%;">
+
+      <!-- Row: *Ferienentschädigung -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: middle;
-        text-align: left;
-      ">
+        <td style="font-size: 10px; vertical-align: middle;">
           *Ferienentschädigung
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 200px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: start;">
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            "> {{metaInfo[0].HolidayCompensationPercentage}}
-              </td>
-            </tr>
-          </table>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">
+            {{metaInfo[0].HolidayCompensationPercentage}}
+          </div>
         </td>
-
-        <!-- 20px gap with = sign -->
-        <td style="
-    width: 40px;
-    padding-top: 20px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 10px;
-  ">
-          =
+        <td style="text-align: center; vertical-align: middle; font-size: 10px;">=</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 180px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: center;">
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
-        </td>
-
-        <!-- Remaining space -->
-        <td style="width: auto;">&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
-    </table>
-    <table role="presentation" style="width: 100%;">
+
+      <!-- Row: Anteil 13. Monatslohn -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: middle;
-        text-align: left;
-      ">
+        <td style="font-size: 10px; vertical-align: middle;">
           Anteil 13. Monatslohn
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 200px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: start;">
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-
-        <!-- 20px gap with = sign -->
-        <td style="
-          width: 40px;
-          padding-top: 20px;
-          text-align: center;
-          vertical-align: middle;
-          font-size: 10px;
-        ">
-          =
-        </td>
-
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 180px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: center;">
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
+        <td style="text-align: center; vertical-align: middle; font-size: 10px;">=</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
         <td style="width: 48px;">&nbsp;</td>
-
-
-        <!-- Checkbox -->
-        <!-- <td style="width: 60px; height: 60px; text-align: center; padding-top: 8px; vertical-align: middle;">
-          <input type="checkbox" style="
-           width: 32px;
-           height: 32px;
-           display: inline-block; 
-           vertical-align: middle;
-         ">
-        </td> -->
-        <td
-          style="width: 40px; height: 60px; padding-left: 18px; text-align: center; padding-top: 8px; vertical-align: bottom;">
-          <div class="rectangle-box-div2" style="padding:0px; font-size: 20px; font-weight: bold;">√</div>
+        <td style="width: 40px; vertical-align: bottom; text-align: center;">
+          <div class="rectangle-box-div2" style="padding: 0px; font-size: 20px; font-weight: bold;">√</div>
         </td>
-
-
-        <!-- Comment text -->
-        <td style="
-        font-size: 10px;
-        vertical-align: middle;
-        text-align: left;
-        padding-left: 8px;
-      ">
+        <td style="font-size: 10px; vertical-align: middle; padding-left: 8px;">
           13. Monatslohn ist weder vertraglich vereinbart noch betriebsüblich
         </td>
       </tr>
-    </table>
-    <table role="presentation" style="width: 100%;">
+
+      <!-- Row: Taggeldleistungen -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: middle;
-        text-align: left;
-      ">
+        <td style="font-size: 10px; vertical-align: middle;">
           Taggeldleistungen
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 200px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: start;">&nbsp;</td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
+        <td>&nbsp;</td>
+        <td style="text-align: center; vertical-align: middle; font-size: 10px;">=</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-
-        <!-- 20px gap with = sign -->
-        <td style="
-        width: 40px;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 10px;
-      ">
-          =
-        </td>
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 180px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: center;">&nbsp;</td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
-        </td>
-        <td style="width: 66px;">&nbsp;</td>
-
-
-        <!-- Third box (fills remaining space) -->
-        <td style="vertical-align: top; width: auto;">
-          <table role="presentation" style="width: 100%; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: start;">welche?</td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
+        <td>&nbsp;</td>
+        <td colspan="2" style="vertical-align: bottom;">
+          <div class="date-label">welche?</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
       </tr>
-    </table>
-    <table role="presentation" style="width: 100%;">
+
+      <!-- Row: Andere Lohnbestandteile -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: middle;
-        text-align: left;
-      ">
+        <td style="font-size: 10px; vertical-align: middle;">
           Andere Lohnbestandteile
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 200px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: start;">&nbsp;</td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
+        <td>&nbsp;</td>
+        <td style="text-align: center; vertical-align: middle; font-size: 10px;">=</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-
-        <!-- 20px gap with = sign -->
-        <td style="
-        width: 40px;
-        text-align: center;
-        vertical-align: middle;
-        font-size: 10px;
-      ">
-          =
-        </td>
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 180px; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: center;">&nbsp;</td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            </tr>
-          </table>
-        </td>
-        <td style="width: 66px;">&nbsp;</td>
-
-
-        <!-- Third box (fills remaining space) -->
-        <td style="vertical-align: top; width: auto;">
-          <table role="presentation" style="width: 100%; height: 42px;">
-            <tr>
-              <td style="font-size: 9px; text-align: start;">welche?</td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-                siehe beil. Lohnabrechnung
-              </td>
-            </tr>
-          </table>
+        <td>&nbsp;</td>
+        <td colspan="2" style="vertical-align: bottom;">
+          <div class="date-label">welche?</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">
+            siehe beil. Lohnabrechnung
+          </div>
         </td>
       </tr>
-    </table>
 
-    <!-- bouns -->
-    <table role="presentation" style="width: 100%;">
+      <!-- Row: **Bonus / Gratifikation -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: middle;
-        text-align: left;
-      ">
+        <td style="font-size: 10px; vertical-align: top; padding-top: 12px;">
           **Bonus / Gratifikation
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 200px;">
-          &nbsp;
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td style="vertical-align: top;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
+          <div style="height: 2px; background: #000; margin-top: 4px;"></div>
         </td>
-
-        <!-- 20px gap with = sign -->
-        <td style="  width: 40px;">&nbsp;</td>
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation" style="width: 180px; height: 42px;">
+        <td style="width: 40px;">&nbsp;</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label" style="margin-bottom: 5px;">von</div>
+          <table role="presentation" style="width: auto;">
             <tr>
-              <td style="font-size: 9px; text-align: center;">&nbsp;</td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td>
+              <td class="date-spacer">.</td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td>
+              <td class="date-spacer">.</td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td>
             </tr>
             <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              padding-top: 4px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">
-              </td>
-            <tr>
-              <td style="vertical-align: bottom; padding-top: 4px;">
-                <div style="width: 180px;">
-                  <div style="height:2px; background:#000;"></div>
-                </div>
-              </td>
+              <td class="date-subscript">T</td><td></td>
+              <td class="date-subscript">T</td><td></td>
+              <td class="date-subscript">M</td><td></td>
+              <td class="date-subscript">M</td><td></td>
+              <td class="date-subscript">J</td><td></td>
+              <td class="date-subscript">J</td><td></td>
+              <td class="date-subscript">J</td><td></td>
+              <td class="date-subscript">J</td>
             </tr>
+          </table>
+        </td>
+        <td style="width: 30px; vertical-align: bottom; padding-bottom: 14px; font-size: 10px; text-align: center;">bis</td>
+        <td style="vertical-align: bottom;">
+          <div class="date-label" style="margin-bottom: 5px;">&nbsp;</div>
+          <table role="presentation" style="width: auto;">
+            <tr>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td>
+              <td class="date-spacer">.</td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td>
+              <td class="date-spacer">.</td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td><td style="width: 2px;"></td>
+              <td class="date-box" style="width: 20px;"></td>
+            </tr>
+            <tr>
+              <td class="date-subscript">T</td><td></td>
+              <td class="date-subscript">T</td><td></td>
+              <td class="date-subscript">M</td><td></td>
+              <td class="date-subscript">M</td><td></td>
+              <td class="date-subscript">J</td><td></td>
+              <td class="date-subscript">J</td><td></td>
+              <td class="date-subscript">J</td><td></td>
+              <td class="date-subscript">J</td>
+            </tr>
+          </table>
+        </td>
       </tr>
-    </table>
-    </td>
-    <td style="width: 66px;">&nbsp;</td>
 
-    <td style="vertical-align: bottom">
-      <div class="date-label" style="margin-bottom: 5px">
-        von
-      </div>
-      <table role="presentation" style="width: auto">
-        <tr>
-          <!-- Day -->
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-
-          <td class="date-spacer">.</td>
-
-          <!-- Month -->
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-
-          <td class="date-spacer">.</td>
-
-          <!-- Year -->
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-        </tr>
-        <tr>
-          <!-- Subscripts T T M M J J J J -->
-          <td class="date-subscript">T</td>
-          <td></td>
-          <td class="date-subscript">T</td>
-
-          <td></td>
-
-          <td class="date-subscript">M</td>
-          <td></td>
-          <td class="date-subscript">M</td>
-
-          <td></td>
-
-          <td class="date-subscript">J</td>
-          <td></td>
-          <td class="date-subscript">J</td>
-          <td></td>
-          <td class="date-subscript">J</td>
-          <td></td>
-          <td class="date-subscript">J</td>
-        </tr>
-      </table>
-    </td>
-    <td style="width: 36px;">&nbsp;</td>
-
-    <td style="vertical-align: bottom;">
-      <div class="date-label" style="margin-bottom: 5px">
-        bis
-      </div>
-      <table role="presentation" style="width: auto">
-        <tr>
-          <!-- Day -->
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-
-          <td class="date-spacer">.</td>
-
-          <!-- Month -->
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-
-          <td class="date-spacer">.</td>
-
-          <!-- Year -->
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-          <td style="width: 2px"></td>
-          <td class="date-box" style="width: 20px"></td>
-        </tr>
-        <tr>
-          <!-- Subscripts T T M M J J J J -->
-          <td class="date-subscript">T</td>
-          <td></td>
-          <td class="date-subscript">T</td>
-
-          <td></td>
-
-          <td class="date-subscript">M</td>
-          <td></td>
-          <td class="date-subscript">M</td>
-
-          <td></td>
-
-          <td class="date-subscript">J</td>
-          <td></td>
-          <td class="date-subscript">J</td>
-          <td></td>
-          <td class="date-subscript">J</td>
-          <td></td>
-          <td class="date-subscript">J</td>
-        </tr>
-      </table>
-    </td>
-
-
-    <!-- Third box (fills remaining space) -->
-    <td style="vertical-align: top; width: auto;">
-
-    </td>
-    </tr>
-    </table>
-
-    <table role="presentation" style="width: 100%;">
+      <!-- Row: Total Bruttolohn -->
       <tr>
-        <!-- Label -->
-        <td style="
-        font-size: 10px;
-        width: 20%;
-        vertical-align: top;
-        padding-top: 12px;
-      ">
+        <td style="font-size: 10px; vertical-align: top; padding-top: 12px;">
           Total Bruttolohn
         </td>
-
-        <!-- First box -->
-        <td style="vertical-align: top; width: 200px;">
-          &nbsp;
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td style="vertical-align: top;">
+          <div class="date-label">&nbsp;</div>
+          <div style="background-color: #dbe4eb; height: 42px; line-height: 42px; padding: 2px 5px; font-size: 14px;">{{metaInfo[0].AHVGrossSalary}}</div>
+          <div style="margin-top: 4px;">
+            <div style="height: 2px; background: #000;"></div>
+            <div style="height: 2px;"></div>
+            <div style="height: 2px; background: #000;"></div>
+          </div>
         </td>
-
-        <!-- 20px gap -->
-        <td style="width: 40px;">&nbsp;</td>
-
-        <!-- Second box -->
-        <td style="vertical-align: top; width: 180px;">
-          <table role="presentation">
-            <tr>
-              <td style="font-size: 9px; padding-bottom: 4px;">
-                &nbsp;
-              </td>
-            </tr>
-            <tr>
-              <td style="
-              background-color: #dbe4eb;
-              width: 180px;
-              height: 42px;
-              line-height: 42px;
-              text-align: start;
-              font-size: 14px;
-              vertical-align: middle;
-            ">{{metaInfo[0].AHVGrossSalary}}
-              </td>
-            <tr>
-              <td style="vertical-align: bottom; padding-top: 4px;">
-                <div style="width: 180px;">
-                  <div style="height:2px; background:#000;"></div>
-                  <div style="height:2px;"></div>
-                  <div style="height:2px; background:#000;"></div>
-                </div>
-              </td>
-            </tr>
-
-
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
       </tr>
-    </table>
-    </td>
 
-    <!-- Remaining space -->
-    <td style="width: auto;">&nbsp;</td>
-    </tr>
     </table>
-    </tr>
+        </td>
+      </tr>
     </table>
 
     <br />
