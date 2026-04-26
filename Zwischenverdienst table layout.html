@@ -139,13 +139,24 @@
       border: 1.5px solid rgb(0, 0, 0);
     }
 
-    .date-spacer {
-      padding: 0px !important;
-      text-align: center;
-      vertical-align: middle;
-      font-weight: bold;
-      background-color: transparent;
-    }
+.date-spacer {
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  width: 0px; 
+  min-width: 0px;
+  display: table-cell;
+}
+
+.spacer-dot {
+  display: block;
+  width: 0;         
+  margin-left: -2px; 
+  margin-right: -2px;
+  font-size: 14px;
+  line-height: 35px;
+}
     .width-2 {
       width: 2px;
     }
@@ -358,7 +369,7 @@
                     {% if forloop.index0 >3 %}
 
                     {% if digit == '.' %}
-                    <td class="date-spacer">.</td>
+                    <td class="date-spacer"><span class="spacer-dot">.</span></td>
                     {% else %}
                     <td class="date-box">{{ digit }}</td>
                     <td style="width:2px"></td>
@@ -924,7 +935,7 @@
                     padding-left: 10px;
                     padding-right: 20px;
                     vertical-align: middle;
-                    width: 3%;
+                    width: 1%;
                   ">
                 ja
               </td>
@@ -1025,7 +1036,7 @@
                     padding-left: 10px;
                     padding-right: 20px;
                     vertical-align: middle;
-                    width: 3%;
+                    width: 1%;
                   ">
                 ja
               </td>
@@ -1102,7 +1113,7 @@
                     padding-left: 10px;
                     padding-right: 10px;
                     vertical-align: middle;
-                    width: 3%;
+                    width: 1%;
                   ">
                 nein
               </td>
@@ -1115,7 +1126,7 @@
                     padding-left: 10px;
                     padding-right: 10px;
                     vertical-align: middle;
-                    width: 3%;
+                    width: 1%;
                   ">
                 ja
               </td>
@@ -1637,10 +1648,10 @@
                   <tr>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
-                    <td class="date-spacer">.</td><td style="width:2px"></td>
+                    <td class="date-spacer"><span class="spacer-dot">.</span></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
-                    <td class="date-spacer">.</td><td style="width:2px"></td>
+                    <td class="date-spacer"><span class="spacer-dot">.</span></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
@@ -1666,10 +1677,10 @@
                   <tr>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
-                    <td class="date-spacer">.</td><td style="width:2px"></td>
+                    <td class="date-spacer"><span class="spacer-dot">.</span></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
-                    <td class="date-spacer">.</td><td style="width:2px"></td>
+                    <td class="date-spacer"><span class="spacer-dot">.</span></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
@@ -1739,10 +1750,10 @@
                   <tr>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td>
-                    <td class="date-spacer">.</td>
+                    <td class="date-spacer"><span class="spacer-dot">.</span></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td>
-                    <td class="date-spacer">.</td>
+                    <td class="date-spacer"><span class="spacer-dot">.</span></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
                     <td class="date-box"></td><td style="width:2px"></td>
@@ -1818,7 +1829,7 @@
             </tr>
           </table>
           <!-- Row 5: Wann + Auf welchen date rows -->
-          <table role="presentation" style="width: 100%; padding-top: 8px;">
+          <table role="presentation" style="width: 100%; padding-top: 16px;">
             <tr>
               <td style="vertical-align: bottom; padding-right: 20px;">
                 <div class="date-label" style="margin-bottom: 5px">Wann wurde gekündigt?</div>
@@ -1924,7 +1935,7 @@
     <br />
 
     <!-- Question 11 -->
-    <table role="presentation" style="width: 100%; margin-left: -16px">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -1942,33 +1953,23 @@
                 an die berufliche Vorsorge (BVG) <br>
                 erhoben?
               </td>
-              <td style="vertical-align: top; width: 3%">
+              <td style="vertical-align: top; width: 25px; padding-top: 4px;">
                 <div class="rectangle-box-div"></div>
               </td>
-              <td style="
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    vertical-align: top;
-                    width: 7%;
-                  ">
+              <td style="padding-left: 6px; padding-right: 4px; padding-top: 4px; vertical-align: top; white-space: nowrap; width: 30px;">
                 nein
               </td>
-              <td style="vertical-align: top; width: 2%">
+              <td style="vertical-align: top; width: 25px; padding-top: 4px;">
                 <div class="rectangle-box-div"></div>
               </td>
-              <td style="
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    vertical-align: top;
-                    width: 3%;
-                  ">
+              <td style="padding-left: 6px; padding-right: 4px; padding-top: 4px; vertical-align: top; white-space: nowrap; width: 30px;">
                 ja
               </td>
               <td style="vertical-align: top; width:auto;">
                 <div class="date-label">Name des BVG-Versicherers</div>
                 <div style="
                       background-color: #dbe4eb;
-                      height: 42px;
+                      height: 32px;
                       line-height: 28px;
                       padding: 2px 5px;
                       width: 100%;
@@ -1978,7 +1979,6 @@
                 </div>
               </td>
 
-
             </tr>
           </table>
         </td>
@@ -1986,7 +1986,7 @@
     </table>
 
     <!-- Question 12 -->
-    <table role="presentation" style="width: 100%; margin-left: -16px">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 4px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -2004,38 +2004,32 @@
                 dungszulagen ausgerichtet?
               </td>
 
-              <td style="vertical-align: middle; width: 2%">
+              <td style="vertical-align: middle; width: 25px;">
                 <div class="rectangle-box-div"></div>
               </td>
-              <td style="
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    vertical-align: middle;
-                    width: 3%;
-                  ">
+              <td style="padding-left: 6px; padding-right: 4px; vertical-align: middle; white-space: nowrap; width: 30px;">
                 ja
               </td>
-              <td style="width: 52px;"> &nbsp;</td>
+              <td style="width: 55px;">&nbsp;</td>
 
               <td style="vertical-align: bottom; width:25%;">
                 <div class="date-label">Anzahl Kinderzulagen</div>
                 <div style="
                       background-color: #dbe4eb;
-                      height: 42px;
+                      height: 32px;
                       line-height: 28px;
                       padding: 2px 5px;
                       font-size: 14px;
                     ">
-                  AXA, siehe beil. Lohnabrechnung
                 </div>
               </td>
-              <td style="width: 2%;"> &nbsp;</td>
+              <td style="width: 8px;">&nbsp;</td>
 
               <td style="vertical-align: bottom; width:25%;">
                 <div class="date-label">Anzahl Ausbildungszulagen</div>
                 <div style="
                       background-color: #dbe4eb;
-                      height: 42px;
+                      height: 32px;
                       line-height: 28px;
                       padding: 2px 5px;
                       font-size: 14px;
@@ -2043,60 +2037,29 @@
                 </div>
               </td>
               <td style="width: auto;"></td>
-
-
             </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <br />
-    <table role="presentation" style="width: 100%; margin-left: -16px">
-      <tr>
-        <td style="
-              vertical-align: top;
-              width: 20px;
-              font-weight: bold;
-              font-size: 12px;
-">
-
-        </td>
-        <td>
-          <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: top">
-                &nbsp;
-              </td>
-
-              <td style="vertical-align: middle; width: 2%">
+              <td style="width: 25%; padding-top: 4px;">&nbsp;</td>
+              <td style="vertical-align: middle; width: 25px; padding-top: 4px;">
                 <div class="rectangle-box-div"></div>
               </td>
-              <td style="
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    vertical-align: middle;
-                    width: 3%;
-                  ">
+              <td style="padding-left: 6px; padding-right: 4px; vertical-align: middle; white-space: nowrap; padding-top: 4px; width: 30px;">
                 nein
               </td>
-              <td style="width: 40px;"> &nbsp;</td>
-
-
-
-              <td style="vertical-align: bottom; width:auto;">
+              <td style="width: 55px; padding-top: 4px;">&nbsp;</td>
+              <td colspan="3" style="vertical-align: bottom; padding-top: 4px;">
                 <div class="date-label">Grund</div>
                 <div style="
                       background-color: #dbe4eb;
-                      height: 42px;
+                      height: 32px;
                       line-height: 28px;
                       padding: 2px 5px;
-                      width: 100%;
                       font-size: 14px;
                     ">
                   siehe beil. Lohnabrechnung
                 </div>
               </td>
-
+              <td></td>
             </tr>
           </table>
         </td>
@@ -2117,7 +2080,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 46%; padding-left: 8px; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 10px; width: 30%; padding-left: 8px; padding-left: 8px; vertical-align: top">
                 Ist/war die versicherte Person oder ihr Ehegatte / ihre Ehegattin / ihr eingetragener Partner / ihre
                 eingetragene <br>
                 Partnerin am Betrieb finanziell beteiligt oder dem obersten betrieblichen Entscheidungsgremium Ihres
@@ -2126,9 +2089,8 @@
                 (z.B. Aktionär/in, Verwaltungsrat/rätin, Gesellschafter/in, Geschäftsführer/in etc.) <br /><br>
                 <span style="font-size: 12px; font-weight: bold;">Einkommen aus selbständiger Erwerbstätigkeit</span>
 
-
               </td>
-              <td style="vertical-align: top; width: 3%">
+              <td style="vertical-align: top; width: 1%">
                 <div class="rectangle-box-div">
                   <span></span>
                 </div>
@@ -2144,7 +2106,7 @@
               </td>
               <td style="
                     vertical-align: top;
-                    width: 3%;
+                    width: 1%;
                   ">
                 ja
               </td>
