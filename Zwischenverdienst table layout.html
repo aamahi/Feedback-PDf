@@ -1770,22 +1770,15 @@
               <td></td>
               <td></td>
             </tr>
-            <!-- Row 3: nein -->
+            <!-- Row 3: nein + Arbeitgeber/Arbeitnehmende on same row -->
             <tr>
-              <td style="width: 25px; vertical-align: middle; padding-top: 5px;">
+              <td style="width: 25px; vertical-align: top; padding-top: 16px;">
                 <div class="rectangle-box-div">
                   {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
                 </div>
               </td>
-              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; white-space: nowrap; padding-top: 5px;">nein. Wer hat gekündigt?</td>
-              <td></td>
-              <td></td>
-            </tr>
-            <!-- Rows 4+5: Arbeitgeber/Arbeitnehmende + mündlich/schriftlich in one nested table -->
-            <tr>
-              <td style="width: 25px; padding-top: 4px;">&nbsp;</td>
-              <td style="padding-top: 4px;">&nbsp;</td>
-              <td style="vertical-align: middle; padding-top: 4px;">
+              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; white-space: nowrap;">nein. Wer hat gekündigt?</td>
+              <td style="vertical-align: top; padding-top: 16px;">
                 <table role="presentation" style="width: auto;">
                   <tr>
                     <td style="width: 25px; vertical-align: middle;">
@@ -2172,7 +2165,7 @@
       </tr>
     </table>
     <!-- Question 14 bottom -->
-    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 16px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
               vertical-align: top;
@@ -2226,7 +2219,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 12px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px;">
+              <td style="font-size: 12px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px; padding-top: 8px;">
                 Bestätigung des Arbeitgebers / der selbständigerwerbenden Person
               </td>
             </tr>
@@ -2235,14 +2228,11 @@
                 Ich bestätige, alle Fragen wahrheitsgetreu und vollständig beantwortet zu haben. Ich nehme zur Kenntnis,
                 dass ich mich gemäss Art. 105/106 AVIG durch </td>
             </tr>
-            <br>
-            <br>
             <tr>
               <td style="font-size: 10px; width: 100%; vertical-align: top; padding-bottom: 4px;">
                 unwahre Angaben oder Verschweigen von Tatsachen strafbar mache, falls dies zu einer ungerechtfertigten
                 Auszahlung von Leistungen führen könnte. </td>
             </tr>
-            <br>
           </table>
         </td>
       </tr>
