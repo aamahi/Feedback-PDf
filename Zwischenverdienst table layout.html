@@ -8,12 +8,12 @@
   <style>
     body {
       font-family: ArialMT, Arial, sans-serif;
-      font-size: 10px;
+      font-size: 13px;
       margin: 0;
     }
 
     .body-container {
-      padding: 0  48px;
+      padding: 16px 48px !important;
       margin: 0;
 
     }
@@ -36,17 +36,17 @@
 
 
     .header-title-sm {
-      font-size: 18px;
+      font-size: 25px;
       margin-bottom: 5px;
     }
 
     .header-title-lg {
-      font-size: 22px;
+      font-size: 24px !important;
       font-weight: bold;
     }
 
     .date-label {
-      font-size: 12px;
+      font-size: 11px !important;
       margin-bottom: 2px;
     }
 
@@ -67,7 +67,7 @@
       background-color: #d9dde8;
       height: 35px;
       width: 35px;
-      font-size: 12px;
+      font-size: 13px;
       vertical-align: middle !important;
       text-align: center;
     }
@@ -173,8 +173,8 @@
 
     .corner-tl {
       position: absolute;
-      top: -8px;
-      left: -8px;
+      top: 0;
+      left: -4px;
       width: 25px;
       height: 25px;
       border-top: 1.5px solid #000;
@@ -183,8 +183,8 @@
 
     .corner-tr {
       position: absolute;
-      top: -8px;
-      right: -8px;
+      top: 0;
+      right: -4px;
       width: 25px;
       height: 25px;
       border-top: 1.5px solid #000;
@@ -193,8 +193,8 @@
 
     .corner-bl {
       position: absolute;
-      bottom: -210px;
-      left: -8px;
+      bottom: -200px;
+      left: -4px;
       width: 25px;
       height: 25px;
       border-bottom: 1.5px solid #000;
@@ -203,8 +203,8 @@
 
     .corner-br {
       position: absolute;
-      bottom: -210px;
-      right: -8px;
+      bottom: -200px;
+      right: -4px;
       width: 25px;
       height: 25px;
       border-bottom: 1.5px solid #000;
@@ -246,7 +246,7 @@
 <body>
   <div class="body-container">
 
-    <table role="presentation">
+    <table role="presentation" style="margin-top: 8px">
       <tr>
         <!-- Left Side: Titles -->
         <td style="width: 70%; margin-bottom: 16px;">
@@ -317,9 +317,9 @@
 
 
     <!-- Applicant Info Section -->
-    <table role="presentation" style="width: 100%; position: relative; margin-top: 20px">
+    <table role="presentation" style="width: 100%; position: relative;">
       <!-- Top Crop Marks -->
-      <div style="position: relative; margin-top: 20px">
+      <div style="position: relative; margin-top: 32px">
         <div class="corner-tl"></div>
         <div class="corner-tr"></div>
       </div>
@@ -340,7 +340,7 @@
             {{metaInfo[0].LastName}}
           </div>
 
-          <div style="height: 15px"></div>
+          <div style="height: 10px"></div>
 
           <!-- AHV & Birthdate Row -->
           <table role="presentation">
@@ -352,16 +352,12 @@
                 </div>
                 <table role="presentation" style="width: auto; font-size: 18px">
                   <tr style="font-size: 18px">
-                    <td style="
-                          font-size: 18px;
-                          padding-right: 4px;
-                          vertical-align: middle;
-                          letter-spacing: 4px;
-                        ">
-                      <span class="before-ahv-number">7</span>
-                      <span class="before-ahv-number">5</span>
-                      <span class="before-ahv-number">6</span>
-                    </td>
+                    <td style="font-size: 18px; vertical-align: middle; padding: 0px 1px 2px 2px;">7</td>
+                    <td style="width:12px"></td>
+                    <td style="font-size: 18px; vertical-align: middle; padding: 0px 1px 2px 2px;">5</td>
+                    <td style="width:12px"></td>
+                    <td style="font-size: 18px; vertical-align: middle; padding: 0px 1px 2px 2px;">6</td>
+                    <td style="width:12px"></td>
                     {% assign ahvChars = metaInfo[0].AHVNumber | split: '' %}
 
                     {% for digit in ahvChars %}
@@ -372,7 +368,11 @@
                     <td class="date-spacer"><span class="spacer-dot">.</span></td>
                     {% else %}
                     <td class="date-box">{{ digit }}</td>
+                    {% assign nextIdx = forloop.index0 | plus: 1 %}
+                    {% assign nextChar = ahvChars[nextIdx] %}
+                    {% if nextChar != '.' %}
                     <td style="width:2px"></td>
+                    {% endif %}
                     {% endif %}
 
                     {% endif %}
@@ -466,16 +466,16 @@
       </tr>
 
       <tr>
-        <td style="height: 20px"></td>
+        <td style="height: 16px"></td>
       </tr>
 
       <!-- Employer Details Header -->
       <tr>
         <td>
-          <div style="font-weight: bold; font-size: 12px; margin-bottom: 2px">
+          <div style="font-weight: bold; font-size: 14px; margin-bottom: 2px">
             Angaben zum Arbeitgeber
           </div>
-          <div style="font-size: 9px; margin-bottom: 3px">
+          <div style="font-size: 13px; margin-bottom: 3px">
             Wenn der Arbeitgeber eine juristische Person ist, bitte die Felder
             BUR- und UID-Nummer ausfüllen, bei natürlichen Personen das Feld
             AHV-Nummer.
@@ -554,16 +554,12 @@
           <div class="date-label" style="margin-bottom: 5px">AHV-Nummer</div>
           <table role="presentation" style="width: auto">
             <tr>
-              <td style="
-                    font-size: 18px;
-                    padding-right: 10px;
-                    vertical-align: bottom;
-                    letter-spacing: 4px;
-                  ">
-                <span class="before-ahv-number">7</span>
-                <span class="before-ahv-number">5</span>
-                <span class="before-ahv-number">6</span>
-              </td>
+              <td style="font-size: 18px; vertical-align: middle; padding: 0px 1px 2px 2px;">7</td>
+              <td style="width:12px"></td>
+              <td style="font-size: 18px; vertical-align: middle; padding: 0px 1px 2px 2px;">5</td>
+              <td style="width:12px"></td>
+              <td style="font-size: 18px; vertical-align: middle; padding: 0px 1px 2px 2px;">6</td>
+              <td style="width:2px"></td>
 
               <!-- First Group or Empty Boxes -->
               <td class="date-box" style="width: 20px"></td>
@@ -608,7 +604,7 @@
     <table role="presentation" style="width: 100%; margin-top: 5px">
       <tr>
         <td style="width: 30%; vertical-align: middle">
-          <div style="font-weight: bold; font-size: 12px">
+          <div style="font-weight: bold; font-size: 14px">
             Verantwortliche Ansprechperson
           </div>
         </td>
@@ -631,7 +627,7 @@
               </td>
 
               <!-- Checkbox 2: Drittperson -->
-              <td style="width: 25px; vertical-align: middle;">
+              <td style="width: 12px; vertical-align: middle;">
                 <div class="rectangle-box-div" ></div>
               </td>
               <td style="padding-left: 10px; vertical-align: middle">
@@ -696,17 +692,17 @@
 
     <br />
     <!-- Question 1: Hours Grid -->
-    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 20px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 12px;">
       <tr>
         <td style="
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           1
         </td>
-        <td style="font-size: 10px; line-height: 1.4">
+        <td style="font-size: 11px; line-height: 1.4">
           Tragen Sie die vom 1. bis zum 30./31.
           <span style="text-decoration: underline">dieses Monats</span>
           gearbeiteten Stunden in Dezimalzahlen ein. Es sind immer die
@@ -730,12 +726,9 @@
       </tr>
     </table>
 
-    <br />
-
-
     <!-- Calendar Grid 1-15 -->
     <!-- Calendar Grid 1-15 -->
-    <table role="presentation" style="width: 100%; border-collapse: separate; border-spacing: 2px">
+    <table role="presentation" style="width: 100%; border-collapse: separate; border-spacing: 2px; margin-top:8px">
       <!-- Day Labels 1-15 -->
       <tr>
         {% for day in (1..15) %}
@@ -821,9 +814,8 @@
 
     <!-- calender end  -->
 
-    <br />
 
-    <div style="font-weight: bold; font-size: 12px">
+    <div style="font-weight: bold; font-size: 12px; margin-top: 12px">
       Für Zwischenverdienst als Selbständigerwerbende bitte bei Frage 14
       fortfahren.
     </div>
@@ -835,14 +827,14 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           2
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; vertical-align: top; margin-right: 4px;">
                 Wurde ein schriftlicher Arbeitsvertrag unterzeichnet?
               </td>
 
@@ -882,7 +874,7 @@
                     vertical-align: middle;
                   ">
                 ja.
-                <span style="font-style: italic; font-size: 12px;">Kopie des Vertrages, resp. bei Temporäranstellungen der Einsatzverträge, beilegen.</span>
+                <span style="font-style: italic; font-size: 13px;">Kopie des Vertrages, resp. bei Temporäranstellungen der Einsatzverträge, beilegen.</span>
               </td>
             </tr>
           </table>
@@ -891,13 +883,13 @@
     </table>
 
     <!-- Question 3 -->
-    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 12px; margin-bottom: 12px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 12px; margin-bottom: 12px; ">
       <tr>
         <td style="
               vertical-align: middle;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           3
         </td>
@@ -905,7 +897,7 @@
           <table role="presentation" style="width: 100%">
 
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: middle">
+              <td style="font-size: 13px; width: 25%; vertical-align: middle; margin-right: 4px;">
                 Wurde mit dem/der Arbeitnehmenden eine wöchentliche
                 Arbeitszeit vereinbart?
               </td>
@@ -948,22 +940,21 @@
         </td>
       </tr>
     </table>
-    <br />
     <!-- Question 4 -->
-    <table role="presentation" style="width: 100%; margin-left: -16px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 12px;">
       <tr>
         <td style="
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           4
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; vertical-align: top; margin-right: 4px;">
                 Wie viel beträgt die wöchentliche Normalarbeitszeit im
                 Betrieb?
               </td>
@@ -976,7 +967,7 @@
                       background-color: #dbe4eb;
                       height: 36px;
                       width: 80px;
-                      text-align: center;
+                      text-align: left;
                       box-sizing: border-box;
                       padding-top: 5px;
                     ">
@@ -999,15 +990,15 @@
               vertical-align: middle;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
-              padding-bottom: 8px;
+              font-size: 13px;
+              padding-bottom: 10px;
             ">
           5
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: middle">
+              <td style="font-size: 13px; width: 25%; vertical-align: middle; margin-right: 4px;">
                 Unterliegt das Arbeitsverhältnis einem Gesamtarbeitsvertrag?
               </td>
               <td style="vertical-align: middle; width: 3%">
@@ -1075,96 +1066,56 @@
       </tr>
     </table>
 
-    <table role="presentation" style="width: 100%">
+    <table role="presentation" style="width: 100%; margin-top: -16px;">
       <tr>
-        <td style="text-align: center; padding-top: 6px; font-size: 16px; font-family: ArialMT, Arial, sans-serif;">1/3</td>
+        <td style="text-align: center;  font-size: 16px; font-family: ArialMT, Arial, sans-serif;">1/3</td>
       </tr>
     </table>
 
-    <br />
     <!-- Question 6 -->
-    <table role="presentation" style="width: 100%; margin-left: -16px">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 16px;">
       <tr>
         <td style="
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           6
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; vertical-align: top">
                 Haben Sie in diesem Monat <br />mehr Arbeit angeboten?
               </td>
-              <td style="vertical-align: middle; width: 3%">
-                <div class="rectangle-box-div">
-                  <span></span>
-                </div>
-              </td>
-              <td style="
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    vertical-align: middle;
-                    width: 1%;
-                  ">
-                nein
-              </td>
-              <td style="vertical-align: middle; width: 2%">
-                <div class="rectangle-box-div">
-
-                </div>
-              </td>
-              <td style="
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    vertical-align: middle;
-                    width: 1%;
-                  ">
-                ja
-              </td>
-              <td style="width: 1%"></td>
-
-              <td style="vertical-align: bottom; width: 20%;">
-                <div class="date-label">Std. pro Tag</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                      font-size: 14px;
-                    ">
-
-                </div>
-              </td>
-              <td style="width: 1%"></td>
-
-              <td style="vertical-align: bottom; width: 20%;">
-                <div class="date-label">Std. pro Woche</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                      font-size: 14px;
-                    ">
-
-                </div>
-              </td>
-              <td style="width: 1%"></td>
-
-              <td style="vertical-align: bottom; width: 20%;">
-                <div class="date-label">Std. pro Monat</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                      font-size: 14px;
-                    ">
-                </div>
+              <td style="vertical-align: top; padding-top: 4px;">
+                <table role="presentation" style="width: auto;">
+                  <tr>
+                    <td style="vertical-align: middle; width: 25px;">
+                      <div class="rectangle-box-div"><span></span></div>
+                    </td>
+                    <td style="padding-left: 8px; padding-right: 10px; vertical-align: middle; white-space: nowrap;">nein</td>
+                    <td style="vertical-align: middle; width: 25px;">
+                      <div class="rectangle-box-div"></div>
+                    </td>
+                    <td style="padding-left: 8px; padding-right: 16px; vertical-align: middle; white-space: nowrap;">ja</td>
+                    <td style="vertical-align: bottom; width: 90px;">
+                      <div class="date-label">Std. pro Tag</div>
+                      <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; font-size: 14px;"></div>
+                    </td>
+                    <td style="width: 8px;"></td>
+                    <td style="vertical-align: bottom; width: 90px;">
+                      <div class="date-label">Std. pro Woche</div>
+                      <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; font-size: 14px;"></div>
+                    </td>
+                    <td style="width: 8px;"></td>
+                    <td style="vertical-align: bottom; width: 90px;">
+                      <div class="date-label">Std. pro Monat</div>
+                      <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; font-size: 14px;"></div>
+                    </td>
+                  </tr>
+                </table>
               </td>
               <td style="width: auto;"></td>
             </tr>
@@ -1180,14 +1131,14 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           7
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; vertical-align: top">
                 Falls der/die Arbeitnehmende das Arbeitsangebot abgelehnt hat, für welchen Zeitraum wurde ein höheres
                 Pensum angeboten und mit welcher Begründung wurde dies abgelehnt?
               </td>
@@ -1195,11 +1146,11 @@
               <td style="vertical-align: bottom">
                 <div style="
                       background-color: #dbe4eb;
-                      height: 90px;
+                      height: 96px;
                       line-height: 16px;
                       padding: 0px 2px;
                       width: 100%;
-                      font-size: 14px !important;
+                      font-size: 16px !important;
                     ">
                   Für den entsprechenden Monat werden auf einer individuellen Wunschliste sämtliche Einsatzmöglichkeiten
                   laufend publiziert. Mitarbeiter-/innen können sich nach ihren eigenen Wünschen anmelden. Falls sich
@@ -1221,14 +1172,14 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 12px; font-weight: bold; width: 100%; vertical-align: top">
+              <td style="font-size: 13px; font-weight: bold; width: 100%; vertical-align: top">
                 Einkommen aus unselbständiger Erwerbstätigkeit
               </td>
             </tr>
           </table>
           <table role="presentation" style="width: 100%; margin-top: 4px;">
             <tr>
-              <td style="font-size: 9px; width: 100%; vertical-align: top; font-style: italic;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top; font-style: italic;">
                 Bitte die Lohnabrechnungen für die Arbeitsstunden dieses Monats beilegen.
               </td>
             </tr>
@@ -1244,14 +1195,14 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           8
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 12px; font-weight: bold; width: 30%; vertical-align: top">
+              <td style="font-size: 13px; font-weight: bold; width: 30%; vertical-align: top">
                 Vereinbartes Bruttoeinkommen
               </td>
             </tr>
@@ -1264,154 +1215,60 @@
 
     <table role="presentation" style="width: 100%; margin-left: -16px">
       <tr>
-        <td style="
-              vertical-align: top;
-              width: 20px;
-              font-weight: bold;
-              font-size: 12px;
-">
-        </td>
+        <td style="vertical-align: top; width: 20px; font-weight: bold; font-size: 13px;"></td>
         <td>
-          <table role="presentation" style="width: 100%">
+          <table role="presentation" style="width: 100%; table-layout: fixed;">
+            <!-- Bei Monatslohn -->
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; vertical-align: top;">
                 <b>Bei Monatslohn</b> <br /> <span>AHV-pflichtiger Bruttolohn in CHF</span>
               </td>
-
-              <td style="vertical-align: bottom; width: 160px;;">
+              <td style="vertical-align: bottom; width: 106px;">
                 <div class="date-label">Monatslohn</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                       width: 100%;
-                      font-size: 14px;
-                    ">
-                </div>
+                <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; width: 100%; font-size: 14px;"></div>
               </td>
-              <td style="width: 24px;"> &nbsp;</td>
-              <td style="vertical-align: bottom; width: 160px;">
+              <td style="width: 16px;"></td>
+              <td style="vertical-align: bottom; width: 106px;">
                 <div class="date-label">13. Monatslohn</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                      font-size: 14px;
-                       width: 100%;
-                    ">
-                </div>
+                <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; width: 100%; font-size: 14px;"></div>
               </td>
-              <td style="width: 24px;"> &nbsp;</td>
-
-              <td style="vertical-align: bottom; width: 160px;">
-
-              </td>
-              <td style="width: 24px;"> &nbsp;</td>
-
-              <td style="vertical-align: bottom; width: 160px;">
-
-              </td>
-              <td style="width: 24px;"> &nbsp;</td>
-
-              <td style="vertical-align: bottom; width: 160px;">
-
-              </td>
-
+              <td style="width: 16px;"></td>
+              <td style="width: 106px;">&nbsp;</td>
+              <td style="width: 16px;"></td>
+              <td style="width: 106px;">&nbsp;</td>
+              <td style="width: 16px;"></td>
+              <td style="width: 106px;">&nbsp;</td>
               <td style="width: auto;"></td>
             </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <br />
-    <table role="presentation" style="width: 100%; margin-left: -16px">
-      <tr>
-        <td style="
-              vertical-align: top;
-              width: 20px;
-              font-weight: bold;
-              font-size: 12px;
-">
-        </td>
-        <td>
-          <table role="presentation" style="width: 100%">
+            <!-- Bei Stundenlohn -->
             <tr>
-              <td style="font-size: 10px; width: 25%; vertical-align: top">
-                <b>Bei Stundenlohn</b> <br /> <span>AHV-pflichtiger Stundenlohn</span> <br> <span>pro Stunde in
-                  CHF</span>
+              <td style="font-size: 13px; width: 25%; vertical-align: top; padding-top: 8px;">
+                <b>Bei Stundenlohn</b> <br /> <span>AHV-pflichtiger Stundenlohn</span> <br> <span>pro Stunde in CHF</span>
               </td>
-
-              <td style="vertical-align: bottom; width: 160px;;">
+              <td style="vertical-align: bottom; width: 106px;">
                 <div class="date-label">Grundlohn</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                       width: 100%;
-                      font-size: 14px;
-                    ">
-                </div>
+                <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; width: 100%; font-size: 14px;"></div>
               </td>
-              <td style="width: 24px;"> &nbsp;</td>
-              <td style="vertical-align: bottom; width: 160px;;">
+              <td style="width: 16px;"></td>
+              <td style="vertical-align: bottom; width: 106px;">
                 <div class="date-label">Feiertagsentschädigung</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                      font-size: 14px;
-                       width: 100%;
-                    ">
-                </div>
+                <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; width: 100%; font-size: 14px;"></div>
               </td>
-              <td style="width: 24px;"> &nbsp;</td>
-
-              <td style="vertical-align: bottom; width: 160px;;">
+              <td style="width: 16px;"></td>
+              <td style="vertical-align: bottom; width: 106px;">
                 <div class="date-label">Ferienentschädigung</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                      font-size: 14px;
-                       width: 100%;
-                    ">
-                </div>
+                <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; width: 100%; font-size: 14px;"></div>
               </td>
-              <td style="width: 24px;"> &nbsp;</td>
-
-              <td style="vertical-align: bottom; width: 160px;;">
+              <td style="width: 16px;"></td>
+              <td style="vertical-align: bottom; width: 106px;">
                 <div class="date-label">13. Monatslohn</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                       width: 100%;
-                      font-size: 14px;
-                    ">
-                </div>
+                <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; width: 100%; font-size: 14px;"></div>
               </td>
-              <td style="width: 24px;"> &nbsp;</td>
-
-              <td style="vertical-align: bottom; width: 160px;;">
+              <td style="width: 16px;"></td>
+              <td style="vertical-align: bottom; width: 106px;">
                 <div class="date-label">Bruttolohn</div>
-                <div style="
-                      background-color: #dbe4eb;
-                      height: 32px;
-                      line-height: 28px;
-                      padding: 2px 5px;
-                      font-size: 14px;
-                       width: 100%;
-                    ">
-
-                </div>
+                <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; width: 100%; font-size: 14px;"></div>
               </td>
-
               <td style="width: auto;"></td>
             </tr>
           </table>
@@ -1427,7 +1284,7 @@
         vertical-align: top;
         width: 20px;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 13px;
 ">
           9
         </td>
@@ -1435,7 +1292,7 @@
           <table role="presentation" style="width: 100%;">
             <tr>
               <td style="
-              font-size: 12px;
+              font-size: 13px;
               font-weight: bold;
               width: 100%;
               vertical-align: top;
@@ -1447,7 +1304,7 @@
 
             <tr>
               <td style="
-              font-size: 10px;
+              font-size: 13px;
               width: 100%;
               vertical-align: top;
               padding-bottom: 4px;
@@ -1458,13 +1315,13 @@
             </tr>
 
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top;">
                 *Bei Stundenlohn bitte zwingend ausfüllen.
               </td>
             </tr>
 
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top;">
                 **Für welchen Zeitraum wurde der Betrag bezahlt.
               </td>
             </tr>
@@ -1483,7 +1340,7 @@
 
       <!-- Row: Anzahl geleistete Stunden -->
       <tr>
-        <td style="font-size: 10px; width: 25%; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; width: 25%; vertical-align: bottom; padding-bottom: 11px;">
           Anzahl geleistete Stunden
         </td>
         <td style="vertical-align: bottom; width: 65px;">
@@ -1499,7 +1356,7 @@
 
       <!-- Row: Grundlohn -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           Grundlohn
         </td>
         <td>&nbsp;</td>
@@ -1513,14 +1370,14 @@
 
       <!-- Row: *Feiertagsentschädigung -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           *Feiertagsentschädigung
         </td>
         <td style="vertical-align: bottom;">
           <div class="date-label">%</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 10px;">=</td>
+        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 13px;">=</td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
@@ -1530,7 +1387,7 @@
 
       <!-- Row: *Ferienentschädigung -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           *Ferienentschädigung
         </td>
         <td style="vertical-align: bottom;">
@@ -1539,7 +1396,7 @@
             {{metaInfo[0].HolidayCompensationPercentage}}
           </div>
         </td>
-        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 10px;">=</td>
+        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 13px;">=</td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
@@ -1549,14 +1406,14 @@
 
       <!-- Row: Anteil 13. Monatslohn -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           Anteil 13. Monatslohn
         </td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 10px;">=</td>
+        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 13px;">=</td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
@@ -1568,7 +1425,7 @@
               <td style="width: 25px; vertical-align: bottom; padding-bottom: 4px; text-align: center;">
                 <div class="rectangle-box-div2" style="padding: 0px; font-size: 20px; font-weight: bold;">√</div>
               </td>
-              <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px; padding-left: 8px; white-space: nowrap;">
+              <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px; padding-left: 8px; white-space: nowrap;">
                 13. Monatslohn ist weder vertraglich vereinbart noch betriebsüblich
               </td>
             </tr>
@@ -1578,14 +1435,14 @@
 
       <!-- Row: Taggeldleistungen -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           Taggeldleistungen
         </td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 10px;">=</td>
+        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 13px;">=</td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
@@ -1598,14 +1455,14 @@
 
       <!-- Row: Andere Lohnbestandteile -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           Andere Lohnbestandteile
         </td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
         </td>
-        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 10px;">=</td>
+        <td style="text-align: center; vertical-align: bottom; padding-bottom: 11px; font-size: 13px;">=</td>
         <td style="vertical-align: bottom;">
           <div class="date-label">&nbsp;</div>
           <div style="background-color: #dbe4eb; height: 32px; line-height: 32px; padding: 2px 5px; font-size: 14px;">&nbsp;</div>
@@ -1620,7 +1477,7 @@
 
       <!-- Row: **Bonus / Gratifikation -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           **Bonus / Gratifikation
         </td>
         <td>&nbsp;</td>
@@ -1698,7 +1555,7 @@
 
       <!-- Row: Total Bruttolohn -->
       <tr>
-        <td style="font-size: 10px; vertical-align: bottom; padding-bottom: 11px;">
+        <td style="font-size: 13px; vertical-align: bottom; padding-bottom: 11px;">
           Total Bruttolohn
         </td>
         <td>&nbsp;</td>
@@ -1724,8 +1581,8 @@
     <!-- Question 10 -->
     <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 8px;">
       <tr>
-        <td style="vertical-align: top; width: 20px; font-weight: bold; font-size: 12px;">10</td>
-        <td style="font-size: 10px; width: 25%; vertical-align: top;">
+        <td style="vertical-align: top; width: 20px; font-weight: bold; font-size: 13px;">10</td>
+        <td style="font-size: 13px; width: 25%; vertical-align: top;">
           Wird das Arbeitsverhältnis weitergeführt?
         </td>
         <td>
@@ -1734,7 +1591,7 @@
             <!-- Row 1: befristet bis + date boxes -->
             <tr>
               <td style="width: 25px; vertical-align: middle;"><div class="rectangle-box-div"></div></td>
-              <td style="padding-left: 10px; padding-right: 10px; vertical-align: middle; white-space: nowrap; font-size: 10px;">befristet bis</td>
+              <td style="padding-left: 10px; padding-right: 10px; vertical-align: middle; white-space: nowrap; font-size: 13px;">befristet bis</td>
               <td style="vertical-align: bottom;">
                 <table role="presentation" style="width: auto">
                   <tr>
@@ -1766,7 +1623,7 @@
                   {% if metaInfo[0].TerminationDate == "" %}<span></span>{% endif %}
                 </div>
               </td>
-              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; padding-top: 5px;">ja, unbefristet</td>
+              <td style="padding-left: 10px; vertical-align: middle; font-size: 13px; padding-top: 5px;">ja, unbefristet</td>
               <td></td>
               <td></td>
             </tr>
@@ -1777,7 +1634,7 @@
                   {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
                 </div>
               </td>
-              <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; white-space: nowrap;">nein. Wer hat gekündigt?</td>
+              <td style="padding-left: 10px; vertical-align: middle; font-size: 13px; white-space: nowrap;">nein. Wer hat gekündigt?</td>
               <td style="vertical-align: top; padding-top: 16px;">
                 <table role="presentation" style="width: auto;">
                   <tr>
@@ -1786,9 +1643,9 @@
                         {% if metaInfo[0].TerminationBy == "Employer" %}<span></span>{% endif %}
                       </div>
                     </td>
-                    <td style="padding-left: 10px; padding-right: 40px; vertical-align: middle; font-size: 10px;">Arbeitgeber</td>
+                    <td style="padding-left: 10px; padding-right: 40px; vertical-align: middle; font-size: 13px;">Arbeitgeber</td>
                     <td style="width: 25px; vertical-align: middle;"><div class="rectangle-box-div"></div></td>
-                    <td style="padding-left: 10px; vertical-align: middle; font-size: 10px;">mündlich</td>
+                    <td style="padding-left: 10px; vertical-align: middle; font-size: 13px;">mündlich</td>
                     <td style="width: auto;">&nbsp;</td>
                   </tr>
                   <tr>
@@ -1797,14 +1654,14 @@
                         {% if metaInfo[0].TerminationBy == "Employee" %}<span></span>{% endif %}
                       </div>
                     </td>
-                    <td style="padding-left: 10px; padding-right: 40px; vertical-align: middle; font-size: 10px; padding-top: 4px;">Arbeitnehmende/r</td>
+                    <td style="padding-left: 10px; padding-right: 40px; vertical-align: middle; font-size: 13px; padding-top: 4px;">Arbeitnehmende/r</td>
                     <td style="width: 25px; vertical-align: middle; padding-top: 4px;">
                       <div class="rectangle-box-div">
                         {% if metaInfo[0].TerminationDate != "" %}<span></span>{% endif %}
                       </div>
                     </td>
-                    <td style="padding-left: 10px; vertical-align: middle; font-size: 10px; padding-top: 4px;">schriftlich</td>
-                    <td style="padding-left: 10px; vertical-align: middle; font-size: 9px; padding-top: 4px;"><span style="font-style: italic;">Bitte Kopie der<br>Kündigung beilegen.</span></td>
+                    <td style="padding-left: 10px; vertical-align: middle; font-size: 13px; padding-top: 4px;">schriftlich</td>
+                    <td style="padding-left: 10px; vertical-align: middle; font-size: 13px; padding-top: 4px;"><span style="font-style: italic;">Bitte Kopie der<br>Kündigung beilegen.</span></td>
                   </tr>
                 </table>
               </td>
@@ -1884,11 +1741,11 @@
       </svg>
       <table role="presentation" style="width: 100%; margin-left: -16px">
         <tr>
-          <td style="vertical-align: top; width: 20px; font-size: 12px;">&nbsp;</td>
+          <td style="vertical-align: top; width: 20px; font-size: 13px;">&nbsp;</td>
           <td>
             <table role="presentation" style="width: 100%">
               <tr>
-                <td style="font-size: 10px; width: 25%; vertical-align: top; padding-left: 8px;">
+                <td style="font-size: 13px; width: 25%; vertical-align: top; padding-left: 8px;">
                   Was war der Grund der Vertragsauflösung?
                 </td>
                 <td>
@@ -1909,27 +1766,27 @@
 
     <table role="presentation" style="width: 100%">
       <tr>
-        <td style="text-align: center; padding-top: 24px; font-size: 16px; font-family: ArialMT, Arial, sans-serif;">2/3</td>
+        <td style="text-align: center; padding-top: 30px; font-size: 16px; font-family: ArialMT, Arial, sans-serif;">2/3</td>
       </tr>
     </table>
 
     <br />
 
     <!-- Question 11 -->
-    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 4px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 8px;">
       <tr>
         <td style="
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           11
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; padding-left: 8px; vertical-align: top">
                 Wurden auf dem Lohn Beiträge <br>
                 an die berufliche Vorsorge (BVG) <br>
                 erhoben?
@@ -1967,13 +1824,13 @@
     </table>
 
     <!-- Question 12 -->
-    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 4px;">
+    <table role="presentation" style="width: 100%; margin-left: -16px; margin-top: 8px;">
       <tr>
         <td style="
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           12
         </td>
@@ -1981,7 +1838,7 @@
           <table role="presentation" style="width: 100%">
             <!-- Row 1: ja + Anzahl/Ausbildung (inputs in single auto col, nested table) -->
             <tr>
-              <td style="font-size: 10px; width: 25%; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; padding-left: 8px; vertical-align: top">
                 Wurden Kinder- und/oder Ausbil- <br>
                 dungszulagen ausgerichtet?
               </td>
@@ -1992,14 +1849,14 @@
                 ja
               </td>
               <td style="vertical-align: bottom; width: auto;">
-                <table role="presentation" style="width: 100%;">
+                <table role="presentation" style="width: auto;">
                   <tr>
-                    <td style="vertical-align: bottom; width: 50%;">
+                    <td style="vertical-align: bottom; width: 140px;">
                       <div class="date-label">Anzahl Kinderzulagen</div>
                       <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; font-size: 14px;"></div>
                     </td>
                     <td style="width: 8px;">&nbsp;</td>
-                    <td style="vertical-align: bottom; width: 50%;">
+                    <td style="vertical-align: bottom; width: 140px;">
                       <div class="date-label">Anzahl Ausbildungszulagen</div>
                       <div style="background-color: #dbe4eb; height: 32px; line-height: 28px; padding: 2px 5px; font-size: 14px;"></div>
                     </td>
@@ -2035,21 +1892,21 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           13
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; padding-left: 8px; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; padding-left: 8px; padding-left: 8px; vertical-align: top">
                 Ist/war die versicherte Person oder ihr Ehegatte / ihre Ehegattin / ihr eingetragener Partner / ihre
                 eingetragene <br>
                 Partnerin am Betrieb finanziell beteiligt oder dem obersten betrieblichen Entscheidungsgremium Ihres
                 Betriebs <br>
                 angehörig? <br>
                 (z.B. Aktionär/in, Verwaltungsrat/rätin, Gesellschafter/in, Geschäftsführer/in etc.) <br /><br>
-                <span style="font-size: 12px; font-weight: bold;">Einkommen aus selbständiger Erwerbstätigkeit</span>
+                <span style="font-size: 13px; font-weight: bold;">Einkommen aus selbständiger Erwerbstätigkeit</span>
 
               </td>
               <td style="vertical-align: top; width: 1%">
@@ -2087,14 +1944,14 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           14
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 25%; padding-left: 8px; vertical-align: top">
+              <td style="font-size: 13px; width: 25%; padding-left: 8px; vertical-align: top">
                 Wieviel betrug das in diesem <br>
                 Monat erarbeitete Einkommen?
               </td>
@@ -2126,7 +1983,7 @@
               </td>
               <td style="width: 36px;"> &nbsp;</td>
 
-              <td style="font-size: 10px; width: 25%; vertical-align: top; padding-top: 16px; font-style: italic;">
+              <td style="font-size: 13px; width: 25%; vertical-align: top; padding-top: 16px; font-style: italic;">
                 Bitte Bruttoeinkommen sowie <br>
                 Material-/Warenkosten belegen.
               </td>
@@ -2146,14 +2003,14 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           &nbsp;
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top">
+              <td style="font-size: 13px; width: 100%; vertical-align: top">
                 Als anrechenbarer Zwischenverdienst gilt das Bruttoeinkommen minus die Material-/Warenkosten minus 20%
                 als Pauschalabzug.
               </td>
@@ -2169,32 +2026,32 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           &nbsp;
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 12px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px;">
+              <td style="font-size: 13px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px;">
                 Hinweise
               </td>
             </tr>
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top; padding-bottom: 4px;">
                 Bitte beantworten Sie sämtliche Fragen und legen die notwendigen Belege als Kopien bei. Unbeantwortete
                 Fragen und unvollständige Beilagen erfordern
               </td>
             </tr>
             <br>
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top; padding-bottom: 4px;">
                 zusätzliche Abklärungen und können die Auszahlung der Arbeitslosenentschädigung verzögern.
               </td>
             </tr>
             <br>
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top; padding-bottom: 4px;">
                 Der Arbeitgeber ist zu wahrheitsgetreuer Auskunft verpflichtet und hat gegenüber Dritten Schweigen zu
                 bewahren (Art. 88 AVIG und Art. 28 ATSG).
               </td>
@@ -2210,24 +2067,24 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           &nbsp;
         </td>
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 12px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px; padding-top: 8px;">
+              <td style="font-size: 13px; font-weight: bold; width: 100%; vertical-align: top; padding-bottom: 4px; padding-top: 8px;">
                 Bestätigung des Arbeitgebers / der selbständigerwerbenden Person
               </td>
             </tr>
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top; padding-bottom: 4px;">
                 Ich bestätige, alle Fragen wahrheitsgetreu und vollständig beantwortet zu haben. Ich nehme zur Kenntnis,
-                dass ich mich gemäss Art. 105/106 AVIG durch </td>
+                dass ich mich gemäss Art. 106/106 AVIG durch </td>
             </tr>
             <tr>
-              <td style="font-size: 10px; width: 100%; vertical-align: top; padding-bottom: 4px;">
+              <td style="font-size: 13px; width: 100%; vertical-align: top; padding-bottom: 4px;">
                 unwahre Angaben oder Verschweigen von Tatsachen strafbar mache, falls dies zu einer ungerechtfertigten
                 Auszahlung von Leistungen führen könnte. </td>
             </tr>
@@ -2241,7 +2098,7 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           &nbsp;
         </td>
@@ -2249,10 +2106,10 @@
           <div class="date-label">Ort</div>
           <div style="
                       background-color: #dbe4eb;
-                      height: 46px;
+                      height: 40px;
                       line-height: 28px;
                       padding: 2px 5px;
-                      width: 360px;
+                      width: 390px;
                       font-size: 14px;
                     ">
             {{metaInfo[0].MainEmploymentLocation}}
@@ -2309,7 +2166,7 @@
               vertical-align: top;
               width: 20px;
               font-weight: bold;
-              font-size: 12px;
+              font-size: 13px;
 ">
           &nbsp;
         </td>
@@ -2320,7 +2177,7 @@
                       height: 46px;
                       line-height: 28px;
                       padding: 2px 5px;
-                      width: 480px;
+                      width: 510px;
                       font-size: 14px;
                     ">
 
@@ -2348,7 +2205,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 14%;  vertical-align: top">
+              <td style="font-size: 13px; width: 14%;  vertical-align: top">
                 Beilagen in Kopie
               </td>
               <td style="vertical-align: top; width: 3%">
@@ -2368,7 +2225,7 @@
         </td>
       </tr>
     </table>
-    <br>
+    <div style="height: 8px;"></div>
     <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
@@ -2379,7 +2236,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 14%;  vertical-align: top">
+              <td style="font-size: 13px; width: 14%;  vertical-align: top">
                 &nbsp;
               </td>
               <td style="vertical-align: top; width: 3%">
@@ -2399,7 +2256,7 @@
         </td>
       </tr>
     </table>
-    <br>
+    <div style="height: 8px;"></div>
     <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
@@ -2410,7 +2267,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 14%;  vertical-align: top">
+              <td style="font-size: 13px; width: 14%;  vertical-align: top">
                 &nbsp;
               </td>
               <td style="vertical-align: top; width: 3%">
@@ -2430,7 +2287,7 @@
         </td>
       </tr>
     </table>
-    <br>
+    <div style="height: 8px;"></div>
     <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
@@ -2441,7 +2298,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 14%;  vertical-align: top">
+              <td style="font-size: 13px; width: 14%;  vertical-align: top">
                 &nbsp;
               </td>
               <td style="vertical-align: top; width: 3%">
@@ -2461,7 +2318,7 @@
         </td>
       </tr>
     </table>
-    <br>
+    <div style="height: 8px;"></div>
     <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
@@ -2472,7 +2329,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 14%;  vertical-align: top">
+              <td style="font-size: 13px; width: 14%;  vertical-align: top">
                 &nbsp;
               </td>
               <td style="vertical-align: top; width: 3%">
@@ -2492,7 +2349,7 @@
         </td>
       </tr>
     </table>
-    <br>
+    <div style="height: 8px;"></div>
     <table role="presentation" style="width: 100%; margin-left: -16px;">
       <tr>
         <td style="
@@ -2503,7 +2360,7 @@
         <td>
           <table role="presentation" style="width: 100%">
             <tr>
-              <td style="font-size: 10px; width: 14%;  vertical-align: top">
+              <td style="font-size: 13px; width: 14%;  vertical-align: top">
                 &nbsp;
               </td>
               <td style="vertical-align: top; width: 3%">
@@ -2537,7 +2394,7 @@
       </svg>
       <table role="presentation" style="width: 100%">
         <tr>
-          <td style="text-align: center; padding-top: 296px; font-size: 16px; font-family: ArialMT, Arial, sans-serif;">3/3</td>
+          <td style="text-align: center; padding-top: 310px; font-size: 16px; font-family: ArialMT, Arial, sans-serif;">3/3</td>
         </tr>
       </table>
     </div>
