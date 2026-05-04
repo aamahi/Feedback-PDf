@@ -726,18 +726,39 @@
       </tr>
     </table>
 
-    <!-- Calendar Grid 1-15 -->
-    <!-- Calendar Grid 1-15 -->
-    <table role="presentation" style="width: 100%; border-collapse: separate; border-spacing: 2px; margin-top:8px">
-      <!-- Day Labels 1-15 -->
+    <!-- Calendar Grid: single table for consistent column widths across both rows -->
+    {% assign monthName = metaInfo[0].TargetMonth %}
+    {% assign year = metaInfo[0].TargetYear %}
+    {% case monthName %}
+    {% when "Januar" %}{% assign totalDays = 31 %}
+    {% when "Februar" %}
+    {% assign febDays = 28 %}
+    {% if year | modulo: 4 == 0 %}{% assign febDays = 29 %}{% endif %}
+    {% assign totalDays = febDays %}
+    {% when "März" %}{% assign totalDays = 31 %}
+    {% when "April" %}{% assign totalDays = 30 %}
+    {% when "Mai" %}{% assign totalDays = 31 %}
+    {% when "Juni" %}{% assign totalDays = 30 %}
+    {% when "Juli" %}{% assign totalDays = 31 %}
+    {% when "August" %}{% assign totalDays = 31 %}
+    {% when "September" %}{% assign totalDays = 30 %}
+    {% when "Oktober" %}{% assign totalDays = 31 %}
+    {% when "November" %}{% assign totalDays = 30 %}
+    {% when "Dezember" %}{% assign totalDays = 31 %}
+    {% endcase %}
+    {% assign remainingCols = 31 | minus: totalDays %}
+
+    <table role="presentation" style="width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 3px; margin-top:8px">
+
+      <!-- Day Labels 1-15 (always 16 cols: 15 days + 1 empty) -->
       <tr>
         {% for day in (1..15) %}
-        <td style="text-align: center; font-size: 9px">{{ day }}</td>
+        <td style="text-align: center; font-size: 9px; width: 6%">{{ day }}</td>
         {% endfor %}
-        <td style="width: 10%"></td> <!-- Spacer -->
+        <td style="width: 6%"></td>
       </tr>
 
-      <!-- Input Boxes 1-15 -->
+      <!-- Input Boxes 1-15 (+ 1 empty) -->
       <tr>
         {% for day in (1..15) %}
         {% for wh in metaInfo[0].WorkingHours %}
@@ -746,52 +767,27 @@
         {% assign matched = true %}
         {% endif %}
         {% endfor %}
-
         {% if matched != true %}
         <td></td>
         {% endif %}
-
         {% assign matched = false %}
         {% endfor %}
-        <td></td> <!-- Spacer -->
+        <td></td>
       </tr>
-    </table>
 
-
-
-    <!-- Calendar Grid 16-31 -->
-
-    <table role="presentation" style="width: 100%; border-collapse: separate; border-spacing: 2px">
-      {% assign monthName = metaInfo[0].TargetMonth %}
-      {% assign year = metaInfo[0].TargetYear %}
-      {% case monthName %}
-      {% when "Januar" %}{% assign totalDays = 31 %}
-      {% when "Februar" %}
-      {% assign febDays = 28 %}
-      {% if year | modulo: 4 == 0 %}{% assign febDays = 29 %}{% endif %}
-      {% assign totalDays = febDays %}
-      {% when "März" %}{% assign totalDays = 31 %} <!-- was "March" -->
-      {% when "April" %}{% assign totalDays = 30 %}
-      {% when "Mai" %}{% assign totalDays = 31 %} <!-- was "May" -->
-      {% when "Juni" %}{% assign totalDays = 30 %}
-      {% when "Juli" %}{% assign totalDays = 31 %}
-      {% when "August" %}{% assign totalDays = 31 %}
-      {% when "September" %}{% assign totalDays = 30 %}
-      {% when "Oktober" %}{% assign totalDays = 31 %}
-      {% when "November" %}{% assign totalDays = 30 %}
-      {% when "Dezember" %}{% assign totalDays = 31 %} <!-- was "December" -->
-      {% endcase %}
-
-      <!-- Day Labels 16-31 -->
-      <!-- <h1>{{monthName}}</h1> if issue the print month then  -->
+      <!-- Day Labels 16-totalDays (padded to 16 cols with padding-top gap) -->
       <tr>
         {% for day in (16..totalDays) %}
-        <td style="text-align: center; font-size: 9px">{{ day }}</td>
+        <td style="text-align: center; font-size: 9px; padding-top: 6px">{{ day }}</td>
         {% endfor %}
-        <td style="width: 10%"></td> <!-- Spacer -->
+        {% if remainingCols > 0 %}
+        {% for i in (1..remainingCols) %}
+        <td></td>
+        {% endfor %}
+        {% endif %}
       </tr>
 
-      <!-- Input Boxes 16-31 -->
+      <!-- Input Boxes 16-totalDays (padded to 16 cols) -->
       <tr>
         {% for day in (16..totalDays) %}
         {% assign matched = false %}
@@ -801,13 +797,17 @@
         {% assign matched = true %}
         {% endif %}
         {% endfor %}
-
         {% if matched == false %}
         <td></td>
         {% endif %}
         {% endfor %}
-        <td></td> <!-- Spacer -->
+        {% if remainingCols > 0 %}
+        {% for i in (1..remainingCols) %}
+        <td></td>
+        {% endfor %}
+        {% endif %}
       </tr>
+
     </table>
 
 
